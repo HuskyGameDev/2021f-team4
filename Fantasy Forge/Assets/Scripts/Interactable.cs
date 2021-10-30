@@ -8,7 +8,7 @@ public class Interactable : MonoBehaviour
 
     public bool isInRange;
     public KeyCode interactKey;
-    public UnityEvent interactAction;
+    public GameObject prompt;   // Prefab instantiated to promt user for future action such as minigame
 
     // Start is called before the first frame update
     void Start()
@@ -23,7 +23,7 @@ public class Interactable : MonoBehaviour
         {
             if (Input.GetKeyDown(interactKey))
             {
-                interactAction.Invoke();
+                Instantiate(prompt);
             }
         }
     }
