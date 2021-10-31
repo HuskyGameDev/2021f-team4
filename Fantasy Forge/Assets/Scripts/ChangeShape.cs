@@ -44,9 +44,11 @@ public class ChangeShape : MonoBehaviour
         return _shapeSpline.GetPosition(i);
     }
 
-    // Move a point towards its destination by a specified distance
-    public void movePoint(int i, float dist)
+    // Move a point towards its destination by a specified distance and return remaining distance
+    public float movePoint(int i, float dist)
     {
         _shapeSpline.SetPosition(i, Vector2.MoveTowards(_shapeSpline.GetPosition(i), _pointTargets[i], dist));
+
+        return Mathf.Abs(Vector2.Distance(_shapeSpline.GetPosition(i), _pointTargets[i]));
     }
 }

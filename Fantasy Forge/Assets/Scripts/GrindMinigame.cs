@@ -15,11 +15,15 @@ public class GrindMinigame : MonoBehaviour
     public float _bladeBoundLeft;   // Left boundary of blade X position in grindArea local space
     public float _bladeBoundRight;  // Right boundary of "   "
     public float flipCooldownTime;  // Minimum time allowed between flips in seconds
+    public float acceptanceThreshold;
 
     private float _speed;           // Degrees rotated by grindstone every second
     private float _grindBoundX;     // Leftmost extent of grind area centered at 0
     private float _grindBoundY;     // Rightmost "   "
     private bool  _flipReady;       // Indicates whether or not sufficient cooldown time has passed since last flip
+    private int   _verticesComplete;
+
+    private bool[] _grindComplete;   // Indicates when each point has been ground below acceptanceThreshold
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +32,14 @@ public class GrindMinigame : MonoBehaviour
         _grindBoundX = grindArea.rect.width  / 2;
         _grindBoundY = grindArea.rect.height / 2;
         _flipReady   = true;
+        _verticesComplete = 0;
+
+        _grindComplete = new bool[swordShape.numPoints()];
+
+        for (int i = 0; i < swordShape.numPoints(); i++)
+        {
+            _grindComplete[i] = false;
+        }
     }
 
     // Update is called once per frame
@@ -44,14 +56,30 @@ public class GrindMinigame : MonoBehaviour
         // Move/"grind" points when in grind space
         for (int i = 0; i < swordShape.numPoints(); i++)
         {
-            Vector2 worldPos = swordShape.transform.TransformPoint(swordShape.getPoint(i)); // Position of point in world space
-            Vector2 areaPos = grindArea.transform.InverseTransformPoint(worldPos);          // Position of point in local space of grind area
+            if (!_grindComplete[i])
+            {
+                Vector2 worldPos = swordShape.transform.TransformPoint(swordShape.getPoint(i)); // Position of point in world space
+                Vector2 areaPos = grindArea.transform.InverseTransformPoint(worldPos);          // Position of point in local space of grind area
 
 
-            if (-_grindBoundX < areaPos.x && areaPos.x  < _grindBoundX &&
-                -_grindBoundY < areaPos.y && areaPos.y < _grindBoundY)
-                swordShape.movePoint(i, (_speed / speedCap) * Time.deltaTime * grindDist);
+                if (-_grindBoundX < areaPos.x && areaPos.x < _grindBoundX &&
+                    -_grindBoundY < areaPos.y && areaPos.y < _grindBoundY)
+                {
+                    float distRemaining = swordShape.movePoint(i, (_speed / speedCap) * Time.deltaTime * grindDist);
+
+
+                    Debug.Log(distRemaining);
+                    if (distRemaining < acceptanceThreshold)
+                    {
+                        _grindComplete[i] = true;
+                        _verticesComplete++;
+                    }
+                }
+            }
         }
+
+        if (_verticesComplete >= swordShape.numPoints())
+            Debug.Log("COMPLETE");
         
     }
 

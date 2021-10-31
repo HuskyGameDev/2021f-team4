@@ -27,22 +27,27 @@ public class Interactable : MonoBehaviour
         {
             if (Input.GetKeyDown(interactKey))
             {
-                
-                if (!_promptOpen)
-                {
-                    _player.enableMovement(false);
-                    _promptOpen = true;
-                    _promptInstance = Instantiate(promptPrefab);
+                // Only attempt to open prompt if no other prompt is open/has frozen player
+               // if (_player.movementEnabled == 1 || _promptOpen)
+                //{
+                    // Toggle prompt openness, player movement, etc.
+                    if (!_promptOpen)
+                    {
+                        _player.movementEnabled = 0;
+                        _promptOpen = true;
+                        _promptInstance = Instantiate(promptPrefab);
 
-                    // Open prompt 5 units above scene
-                    _promptInstance.transform.position = Vector3.back * 5;
-                }
-                else
-                {
-                    _player.enableMovement(true);
-                    _promptOpen = false;
-                    Destroy(_promptInstance);
-                }
+                        // Open prompt 5 units above scene
+                        _promptInstance.transform.position = Vector3.back * 5;
+                    }
+                    else
+                    {
+                        _player.movementEnabled = 1;
+                        _promptOpen = false;
+                        Destroy(_promptInstance);
+                    }
+                //}
+                
             }
         }
     }

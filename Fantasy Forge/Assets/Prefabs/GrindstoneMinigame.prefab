@@ -421,6 +421,8 @@ MonoBehaviour:
   _bladeBoundLeft: -1.75
   _bladeBoundRight: 1.75
   flipCooldownTime: 1
+  referenceStartDist: 1
+  acceptanceThreshold: 0.01
 --- !u!1001 &5703659802997314193
 PrefabInstance:
   m_ObjectHideFlags: 0
