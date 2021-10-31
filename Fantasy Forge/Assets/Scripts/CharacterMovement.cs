@@ -13,12 +13,14 @@ public class CharacterMovement : MonoBehaviour
 
     Vector2 movement;
 
+    private int _movementEnabled = 1;   // Used to disable movement when minigames open
+
     // Update is called once per frame
     void Update()
     {
         //Input
-        movement.x = Input.GetAxisRaw("Horizontal");
-        movement.y = Input.GetAxisRaw("Vertical");
+        movement.x = Input.GetAxisRaw("Horizontal") * _movementEnabled;
+        movement.y = Input.GetAxisRaw("Vertical") * _movementEnabled;
 
         animator.SetFloat("Horizontal", movement.x);
         animator.SetFloat("Vertical", movement.y);
@@ -29,5 +31,13 @@ public class CharacterMovement : MonoBehaviour
     {
         //Movement
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+    }
+
+    public void enableMovement(bool enable)
+    {
+        if (enable)
+            _movementEnabled = 1;
+        else
+            _movementEnabled = 0;
     }
 }

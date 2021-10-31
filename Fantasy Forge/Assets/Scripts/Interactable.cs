@@ -5,25 +5,44 @@ using UnityEngine.Events;
 
 public class Interactable : MonoBehaviour
 {
+    public KeyCode interactKey;         // Keycode used to open/close prompt    
+    public GameObject promptPrefab;     // Prefab instantiated to promt user for future action such as 
 
-    public bool isInRange;
-    public KeyCode interactKey;
-    public GameObject prompt;   // Prefab instantiated to promt user for future action such as minigame
+    private bool _isInRange  = false;           // Indicates of player is within interact zone
+    private bool _promptOpen = false;           // Indicates if prompt is open
+    private GameObject _promptInstance = null;  // Actual instance of prompt prefab to be created/destroyed on open/close
+    private CharacterMovement _player;          // Player object for enabling/disabling movement on prompt open
+
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        _player = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterMovement>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (isInRange)
+        if (_isInRange)
         {
             if (Input.GetKeyDown(interactKey))
             {
-                Instantiate(prompt);
+                
+                if (!_promptOpen)
+                {
+                    _player.enableMovement(false);
+                    _promptOpen = true;
+                    _promptInstance = Instantiate(promptPrefab);
+
+                    // Open prompt 5 units above scene
+                    _promptInstance.transform.position = Vector3.back * 5;
+                }
+                else
+                {
+                    _player.enableMovement(true);
+                    _promptOpen = false;
+                    Destroy(_promptInstance);
+                }
             }
         }
     }
@@ -32,8 +51,8 @@ public class Interactable : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            isInRange = true;
-            Debug.Log("Player now in range");
+            _isInRange = true;
+            //Debug.Log("Player now in range");
         }
     }
 
@@ -41,8 +60,8 @@ public class Interactable : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            isInRange = false;
-            Debug.Log("Player now not in range");
+            _isInRange = false;
+            //Debug.Log("Player now not in range");
         }
     }
 
