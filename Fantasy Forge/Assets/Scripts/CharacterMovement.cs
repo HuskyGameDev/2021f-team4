@@ -14,10 +14,16 @@ public class CharacterMovement : MonoBehaviour
 
     Vector2 movement;
 
+    public bool canMove; // using in the TextBoxManager script to stop player from moving while interacting
     
     // Update is called once per frame
     void Update()
     {
+        if (!canMove) // player movement is stopped
+        {
+            return;
+        }
+
         //Input
         movement.x = Input.GetAxisRaw("Horizontal") * movementEnabled;
         movement.y = Input.GetAxisRaw("Vertical") * movementEnabled;
