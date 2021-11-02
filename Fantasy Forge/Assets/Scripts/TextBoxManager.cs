@@ -26,7 +26,7 @@ public class TextBoxManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player = FindObjectOfType<CharacterMovement>().;
+        player = FindObjectOfType<CharacterMovement>();
 
         if (textFile != null)
         {
