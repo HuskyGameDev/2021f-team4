@@ -33,7 +33,7 @@ public class Interactable : MonoBehaviour
                     // Toggle prompt openness, player movement, etc.
                     if (!_promptOpen)
                     {
-                        _player.movementEnabled = 0;
+                        _player.canMove = false;
                         _promptOpen = true;
                         _promptInstance = Instantiate(promptPrefab);
 
@@ -42,7 +42,7 @@ public class Interactable : MonoBehaviour
                     }
                     else
                     {
-                        _player.movementEnabled = 1;
+                        _player.canMove = true;
                         _promptOpen = false;
                         Destroy(_promptInstance);
                     }

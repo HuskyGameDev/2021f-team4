@@ -14,7 +14,7 @@ public class ChangeShape : MonoBehaviour
     private Vector3[] _pointTargets;    // Target/destination of each point in _shapeSpline
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         // Get spline components from this SpriteShapeController and start SpriteShapeController
         _shapeSpline = GetComponent<SpriteShapeController>().spline;
@@ -50,5 +50,13 @@ public class ChangeShape : MonoBehaviour
         _shapeSpline.SetPosition(i, Vector2.MoveTowards(_shapeSpline.GetPosition(i), _pointTargets[i], dist));
 
         return Mathf.Abs(Vector2.Distance(_shapeSpline.GetPosition(i), _pointTargets[i]));
+    }
+
+    public void addTargetBuffer(float addX)
+    {
+        for (int i = 0; i < _shapeSpline.GetPointCount(); i++)
+        {
+            _pointTargets[i].x += (_shapeSpline.GetPosition(i).x / Mathf.Abs(_shapeSpline.GetPosition(i).x)) * addX;
+        }
     }
 }

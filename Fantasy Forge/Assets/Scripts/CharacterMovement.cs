@@ -6,7 +6,6 @@ public class CharacterMovement : MonoBehaviour
 {
 
     public float moveSpeed = 5f;
-    public int movementEnabled = 1;   // Used to disable movement when minigames open
 
     public Rigidbody2D rb;
 
@@ -25,8 +24,9 @@ public class CharacterMovement : MonoBehaviour
         }
 
         //Input
-        movement.x = Input.GetAxisRaw("Horizontal") * movementEnabled;
-        movement.y = Input.GetAxisRaw("Vertical") * movementEnabled;
+        
+        movement.x = Input.GetAxisRaw("Horizontal");
+        movement.y = Input.GetAxisRaw("Vertical");
 
         animator.SetFloat("Horizontal", movement.x);
         animator.SetFloat("Vertical", movement.y);

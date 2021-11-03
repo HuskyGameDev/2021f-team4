@@ -369,7 +369,7 @@ Transform:
   - {fileID: 1698476376}
   - {fileID: 1052740161}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &952599034
 PrefabInstance:
@@ -835,6 +835,12 @@ PrefabInstance:
       propertyPath: interactKey
       value: 101
       objectReference: {fileID: 0}
+    - target: {fileID: 1047435278056389884, guid: 7e981201b966c854aa9a535bf0e272fd,
+        type: 3}
+      propertyPath: promptPrefab
+      value: 
+      objectReference: {fileID: 5492854539800111153, guid: 9c85ed425cd9d8c4087903e817ea78ea,
+        type: 3}
     - target: {fileID: 1047435278056389884, guid: 7e981201b966c854aa9a535bf0e272fd,
         type: 3}
       propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.size
@@ -1572,6 +1578,7 @@ MonoBehaviour:
   moveSpeed: 5
   rb: {fileID: 1698476378}
   animator: {fileID: 1698476374}
+  canMove: 1
 --- !u!50 &1698476378
 Rigidbody2D:
   serializedVersion: 4
@@ -1809,6 +1816,8 @@ MonoBehaviour:
   currentLine: 0
   endAtLine: 1
   isActive: 0
+  player: {fileID: 0}
+  stopPlayerMovement: 0
 --- !u!1 &1869992125
 GameObject:
   m_ObjectHideFlags: 0
@@ -2439,7 +2448,7 @@ RectTransform:
   - {fileID: 1562976009}
   - {fileID: 1866222575}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2464,6 +2473,12 @@ PrefabInstance:
       propertyPath: interactKey
       value: 101
       objectReference: {fileID: 0}
+    - target: {fileID: 1047435278056389884, guid: 7e981201b966c854aa9a535bf0e272fd,
+        type: 3}
+      propertyPath: promptPrefab
+      value: 
+      objectReference: {fileID: 4680090188988248977, guid: 93b3d215696fbd944b52d75d145993a2,
+        type: 3}
     - target: {fileID: 1047435278056389884, guid: 7e981201b966c854aa9a535bf0e272fd,
         type: 3}
       propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.size

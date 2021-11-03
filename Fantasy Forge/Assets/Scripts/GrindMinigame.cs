@@ -67,8 +67,6 @@ public class GrindMinigame : MonoBehaviour
                 {
                     float distRemaining = swordShape.movePoint(i, (_speed / speedCap) * Time.deltaTime * grindDist);
 
-
-                    Debug.Log(distRemaining);
                     if (distRemaining < acceptanceThreshold)
                     {
                         _grindComplete[i] = true;
@@ -79,7 +77,10 @@ public class GrindMinigame : MonoBehaviour
         }
 
         if (_verticesComplete >= swordShape.numPoints())
+        {
             Debug.Log("COMPLETE");
+            Destroy(gameObject);
+        }
         
     }
 
