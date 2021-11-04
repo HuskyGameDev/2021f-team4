@@ -926,11 +926,11 @@ MonoBehaviour:
   heat: {fileID: 1217424058995053647}
   complete: {fileID: 2922071351851156469}
   time: 0
-  bellow1: {fileID: 21300000, guid: 9539b822b86c0744f844eedf31d004ec, type: 3}
-  bellow2: {fileID: 21300000, guid: 37a45a63f1d304846a739e05a3040260, type: 3}
-  bellow3: {fileID: 21300000, guid: da7e10d809603424ba30c08e2dd5ab7d, type: 3}
-  bellow4: {fileID: 21300000, guid: 1971462cbb130674e97513badd8f68d1, type: 3}
-  bellow5: {fileID: 21300000, guid: 982a8d7bfadfbcc47816ee3381c26d2b, type: 3}
+  bellow1: {fileID: 21300000, guid: 2c71bb8b05e25b148ad1cd98887817c0, type: 3}
+  bellow2: {fileID: 21300000, guid: 1c440c98602da9a45b8796e325adf748, type: 3}
+  bellow3: {fileID: 21300000, guid: e810ec0ae836e8f488033a190abb456d, type: 3}
+  bellow4: {fileID: 21300000, guid: 46d5968aec9c6b646a725af884cd09a0, type: 3}
+  bellow5: {fileID: 21300000, guid: 4b756feaf89cc7649a61d83933fdff67, type: 3}
   bellowImage: {fileID: 526331138865137423}
 --- !u!1 &6159785569009195223
 GameObject:
@@ -1004,7 +1004,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 936, y: -209.44458}
+  m_AnchoredPosition: {x: 909, y: -209.44458}
   m_SizeDelta: {x: 651.7543, y: 174.3538}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &8510620219681458800
