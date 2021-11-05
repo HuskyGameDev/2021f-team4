@@ -11,28 +11,26 @@ public class FurnaceScript : MonoBehaviour
     public GameObject complete;
     private float timer;
     public float time;
-    //public GameObject bellowObject;
     public Sprite bellow1;
     public Sprite bellow2;
     public Sprite bellow3;
     public Sprite bellow4;
     public Sprite bellow5;
     public Image bellowImage;
+    public GameObject minigame;
 
     // Start is called before the first frame update
     void Start()
     {
-        heat.value = 0;
+        heat.value = 10;
         bellow.value = (float)22.5;
-
-        //bellowImage = bellowObject.GetComponent<Image>();
         bellowImage.sprite = bellow1;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(heat.value >= 5 && heat.value <= 8)
+        if(heat.value >= 2 && heat.value <= 4)
         {
             timer += Time.deltaTime;
         }
@@ -43,17 +41,17 @@ public class FurnaceScript : MonoBehaviour
 
         if(timer >= time)
         {
-            complete.SetActive(true);
+            Destroy(minigame);
         }
 
-        heat.value -= (float)0.001;
+        heat.value += (float)0.001;
     }
 
     public void pump()
     {
         if(bellow.value == 0)
         {
-            heat.value++;
+            heat.value--;
         }
         if(bellow.value > 16.9)
         {
