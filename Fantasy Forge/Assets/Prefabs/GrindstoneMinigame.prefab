@@ -374,6 +374,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5492854539800111158}
   - component: {fileID: 5492854539800111159}
+  - component: {fileID: 6086972329600629089}
   m_Layer: 5
   m_Name: GrindstoneMinigame
   m_TagString: Untagged
@@ -421,8 +422,19 @@ MonoBehaviour:
   _bladeBoundLeft: -1.75
   _bladeBoundRight: 1.75
   flipCooldownTime: 1
-  referenceStartDist: 1
   acceptanceThreshold: 0.01
+--- !u!114 &6086972329600629089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5492854539800111153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b0f3c7a57ea8e84e9be23a4264f4dfd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &5703659802997314193
 PrefabInstance:
   m_ObjectHideFlags: 0

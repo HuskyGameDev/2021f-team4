@@ -33,18 +33,11 @@ public class Interactable : MonoBehaviour
                     // Toggle prompt openness, player movement, etc.
                     if (!_promptOpen)
                     {
-                        _player.canMove = false;
-                        _promptOpen = true;
-                        _promptInstance = Instantiate(promptPrefab);
-
-                        // Open prompt 5 units above scene
-                        _promptInstance.transform.position = Vector3.back * 5;
+                        openPrompt();
                     }
                     else
                     {
-                        _player.canMove = true;
-                        _promptOpen = false;
-                        Destroy(_promptInstance);
+                    closePrompt();
                     }
                 //}
                 
@@ -68,6 +61,24 @@ public class Interactable : MonoBehaviour
             _isInRange = false;
             //Debug.Log("Player now not in range");
         }
+    }
+
+    public void openPrompt()
+    {
+        _player.canMove = false;
+        _promptOpen = true;
+        _promptInstance = Instantiate(promptPrefab);
+        _promptInstance.GetComponent<Prompt>().promptingInteractable = this;
+
+        // Open prompt 5 units above scene
+        _promptInstance.transform.position = Vector3.back * 5;
+    }
+
+    public void closePrompt()
+    {
+        _player.canMove = true;
+        _promptOpen = false;
+        Destroy(_promptInstance);
     }
 
 }

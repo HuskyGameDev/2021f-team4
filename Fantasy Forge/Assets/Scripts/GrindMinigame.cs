@@ -22,9 +22,8 @@ public class GrindMinigame : MonoBehaviour
     private float _grindBoundY;     // Rightmost "   "
     private bool  _flipReady;       // Indicates whether or not sufficient cooldown time has passed since last flip
     private int   _verticesComplete;
-
     private bool[] _grindComplete;   // Indicates when each point has been ground below acceptanceThreshold
-
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -65,9 +64,9 @@ public class GrindMinigame : MonoBehaviour
                 if (-_grindBoundX < areaPos.x && areaPos.x < _grindBoundX &&
                     -_grindBoundY < areaPos.y && areaPos.y < _grindBoundY)
                 {
-                    float distRemaining = swordShape.movePoint(i, (_speed / speedCap) * Time.deltaTime * grindDist);
+                    Vector2 distRemaining = swordShape.movePoint(i, (_speed / speedCap) * Time.deltaTime * grindDist);
 
-                    if (distRemaining < acceptanceThreshold)
+                    if (distRemaining.magnitude < acceptanceThreshold)
                     {
                         _grindComplete[i] = true;
                         _verticesComplete++;
@@ -79,7 +78,8 @@ public class GrindMinigame : MonoBehaviour
         if (_verticesComplete >= swordShape.numPoints())
         {
             Debug.Log("COMPLETE");
-            Destroy(gameObject);
+            GetComponent<Prompt>().promptingInteractable.closePrompt();
+            
         }
         
     }

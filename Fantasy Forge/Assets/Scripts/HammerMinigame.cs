@@ -7,7 +7,7 @@ public class HammerMinigame : MonoBehaviour
     public float hammerRadius;          // Radius of hammer hit around mouse click where points are moved
     public float hitDistanceMultiplier; // Proportion of hammer radius that is the maximum distance a point can move when hit
     public float hitCooldownTime;       // Minimum time allowed between hits in seconds
-    public float targetBuffer;          // Amount X targets are increased by to allow free-form shaping.
+    public float targetScale;           // Amount X targets are scaled by to allow free-form shaping.
 
     private ChangeShape _swordShape;    // ChangeShape of this HameObject/sword being formed
     private bool _hitReady;             // Indicates whether or not sufficient cooldown time has passed since last hit
@@ -28,7 +28,8 @@ public class HammerMinigame : MonoBehaviour
             _hammerComplete[i] = false;
         }
 
-        _swordShape.addTargetBuffer(targetBuffer);
+        //_swordShape.addTargetBuffer(targetBuffer);
+        _swordShape.scaleTargetBuffer(targetScale);
     }
 
     // Update is called once per frame
@@ -52,15 +53,16 @@ public class HammerMinigame : MonoBehaviour
                 if (!_hammerComplete[i])
                 {
                     float distFromClick = Vector2.Distance(_swordShape.getPoint(i), mousePosSword); // Distance between point on sword and mouse click
-                    float distRemaining;
+                    Vector3 distRemaining;
 
                     // If point is within hammer hit radius, move it towards its target
                     if (distFromClick <= hammerRadius)
                     {
                         distRemaining = _swordShape.movePoint(i, (hammerRadius - distFromClick) * hitDistanceMultiplier);
 
-                        if (distRemaining < targetBuffer)
+                        if (Mathf.Abs(distRemaining.magnitude) < .001) //targetScale)
                         {
+                            Debug.Log("Vertex " + i +  " complete");
                             _hammerComplete[i] = true;
                             _verticesComplete++;
                         }
@@ -71,7 +73,7 @@ public class HammerMinigame : MonoBehaviour
             if (_verticesComplete >= _swordShape.numPoints())
             {
                 Debug.Log("COMPLETE");
-                Destroy(gameObject.transform.parent);
+                GetComponentInParent<Prompt>().promptingInteractable.closePrompt();
             }
 
             StartCoroutine("HitCooldown");

@@ -44,19 +44,32 @@ public class ChangeShape : MonoBehaviour
         return _shapeSpline.GetPosition(i);
     }
 
-    // Move a point towards its destination by a specified distance and return remaining distance
-    public float movePoint(int i, float dist)
+    // Move a point towards its destination by a specified distance and return difference vector
+    public Vector3 movePoint(int i, float dist)
     {
         _shapeSpline.SetPosition(i, Vector2.MoveTowards(_shapeSpline.GetPosition(i), _pointTargets[i], dist));
 
-        return Mathf.Abs(Vector2.Distance(_shapeSpline.GetPosition(i), _pointTargets[i]));
+        return _pointTargets[i] - _shapeSpline.GetPosition(i);
     }
 
     public void addTargetBuffer(float addX)
     {
         for (int i = 0; i < _shapeSpline.GetPointCount(); i++)
         {
-            _pointTargets[i].x += (_shapeSpline.GetPosition(i).x / Mathf.Abs(_shapeSpline.GetPosition(i).x)) * addX;
+            Debug.Log("From: " + _pointTargets[i].x);
+            if (_pointTargets[i].x != 0)
+                _pointTargets[i].x += (_shapeSpline.GetPosition(i).x / Mathf.Abs(_shapeSpline.GetPosition(i).x)) * addX;
+            Debug.Log("To: " + _pointTargets[i].x);
+        }
+    }
+
+    public void scaleTargetBuffer(float scale)
+    {
+        for (int i = 0; i < _shapeSpline.GetPointCount(); i++)
+        {
+            Debug.Log("From: " + _pointTargets[i].x);
+            _pointTargets[i] *= scale;
+            Debug.Log("To: " + _pointTargets[i].x);
         }
     }
 }
