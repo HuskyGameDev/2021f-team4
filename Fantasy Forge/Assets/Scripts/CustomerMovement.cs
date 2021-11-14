@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class CustomerMovement : MonoBehaviour
 {
-    public float moveSpeed = 4f; //Customer speed
+    private float moveSpeed = 4f; //Customer speed
     public Rigidbody2D customerRB;
     public Animator animator; //Allows for animations of customer
-    Vector2 movement;
+    private Vector2 movement;
+    private Vector2 screenBounds;
 
 
 
@@ -19,6 +20,9 @@ public class CustomerMovement : MonoBehaviour
 
         //Allows for a wait time to be implemented(for patience)
         StartCoroutine(patience());
+
+        //Adding screenbound so customer disappears after leaving the screen.
+        screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.x, Camera.main.transform.position.z));
     }
 
     // The Behavior of the customers
@@ -47,6 +51,12 @@ public class CustomerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Checking to see if customer is to the left of the screen.
+        if (transform.position.x < screenBounds.x)
+        {
+            Destroy(this.gameObject);
+        }
+
         //Animation for customer to walk in different directions
         animator.SetFloat("Horizontal", movement.x);
         animator.SetFloat("Vertical", movement.y);
@@ -60,10 +70,6 @@ public class CustomerMovement : MonoBehaviour
         {
             movement.x = 0;
         }
-        if (collision.gameObject.name == "Door")
-        {
-            Destroy(gameObject);
-        }
     }
 
 
@@ -72,6 +78,4 @@ public class CustomerMovement : MonoBehaviour
         //Movement for the costumer
         customerRB.MovePosition(customerRB.position + movement * moveSpeed * Time.fixedDeltaTime);
     }
-
-    
 }
