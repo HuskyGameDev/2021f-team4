@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
+
 
 public class TextBoxManager : MonoBehaviour
 {
     public GameObject textBox; // I don't know if we even need a text box for the dialog - can delete if necessary
 
-    public TextMesh theText; // I don't know how to get this to work for using TMP and not normal text
+    public TMP_Text theText; 
 
     public TextAsset textFile;
 
