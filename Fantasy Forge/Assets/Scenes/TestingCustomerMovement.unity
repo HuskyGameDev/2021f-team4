@@ -550,7 +550,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 7cefe9e9e8c984bbd9ff43235be8f54f, type: 3}
+  m_Sprite: {fileID: -844150801018893838, guid: 148896b1d7ab4ab47ae21915c95eb0c0,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -578,7 +579,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.24, y: 0.24}
+    oldSize: {x: 1.24, y: 1.24}
     newSize: {x: 0.24, y: 0.24}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -586,15 +587,29 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.03, y: 0.12}
-      - {x: -0.08, y: 0.089999996}
-      - {x: -0.08, y: -0.07}
-      - {x: -0.07, y: -0.099999994}
-      - {x: -0.06, y: -0.12}
-      - {x: 0.02, y: -0.12}
-      - {x: 0.08, y: -0.089999996}
-      - {x: 0.08, y: 0.06}
-      - {x: 0.049999997, y: 0.12}
+    - - {x: 0.32999998, y: -0.04}
+      - {x: 0.37, y: 0.22999999}
+      - {x: 0.5, y: 0.17999999}
+      - {x: 0.53, y: 0.24}
+      - {x: 0.53, y: 0.41}
+      - {x: 0.38, y: 0.62}
+      - {x: -0.03, y: 0.62}
+      - {x: -0.29, y: 0.53}
+      - {x: -0.37, y: 0.32}
+      - {x: -0.37, y: 0.26999998}
+      - {x: -0.32999998, y: 0.26}
+      - {x: -0.29999998, y: 0.26}
+      - {x: -0.31, y: 0.19}
+      - {x: -0.31, y: 0.12}
+      - {x: -0.28, y: 0.089999996}
+      - {x: -0.26, y: 0.089999996}
+      - {x: -0.24, y: -0.06}
+      - {x: -0.29, y: -0.11}
+      - {x: -0.26, y: -0.58}
+      - {x: -0.17999999, y: -0.62}
+      - {x: 0.32999998, y: -0.62}
+      - {x: 0.41, y: -0.53}
+      - {x: 0.38, y: -0.12}
 --- !u!50 &775072398
 Rigidbody2D:
   serializedVersion: 4
@@ -624,8 +639,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 775072394}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.86, y: 1.67, z: 0}
-  m_LocalScale: {x: 8, y: 8, z: 0}
+  m_LocalPosition: {x: -5.1132, y: 2.0971, z: 0}
+  m_LocalScale: {x: 1.7569757, y: 1.4302337, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2

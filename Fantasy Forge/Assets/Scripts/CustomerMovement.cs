@@ -10,6 +10,7 @@ public class CustomerMovement : MonoBehaviour
     Vector2 movement;
 
 
+
     // Start is called before the first frame update
     void Start()
     {
