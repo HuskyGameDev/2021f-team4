@@ -9,7 +9,7 @@ public class TextBoxManager : MonoBehaviour
 {
     public GameObject textBox; // I don't know if we even need a text box for the dialog - can delete if necessary
 
-    public TMP_Text theText; 
+    public TMP_Text theText; // This is the proper class for text mesh pro, but it still won't accept the text file for it
 
     public TextAsset textFile;
 
