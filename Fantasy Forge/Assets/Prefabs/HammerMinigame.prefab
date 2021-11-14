@@ -133,8 +133,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hammerRadius: 0.7
   hitDistanceMultiplier: 0.75
-  hitCooldownTime: 1
-  targetScale: 1.25
+  hitCooldownTime: 0.001
+  targetScale: 1.1
 --- !u!1 &4680090188988248977
 GameObject:
   m_ObjectHideFlags: 0

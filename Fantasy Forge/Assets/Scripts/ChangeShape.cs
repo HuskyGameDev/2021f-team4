@@ -67,9 +67,20 @@ public class ChangeShape : MonoBehaviour
     {
         for (int i = 0; i < _shapeSpline.GetPointCount(); i++)
         {
-            Debug.Log("From: " + _pointTargets[i].x);
             _pointTargets[i] *= scale;
-            Debug.Log("To: " + _pointTargets[i].x);
         }
+    }
+
+    public void setShape(SpriteShapeController spriteShape)
+    {
+        for (int i = 0; i < _shapeSpline.GetPointCount(); i++)
+        {
+            _shapeSpline.SetPosition(i, spriteShape.spline.GetPosition(i));
+        }
+    }
+
+    public SpriteShapeController getSpriteShape()
+    {
+        return GetComponent<SpriteShapeController>();
     }
 }

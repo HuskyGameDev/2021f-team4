@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.U2D;
 
 public class GrindMinigame : MonoBehaviour
 {
@@ -17,11 +18,12 @@ public class GrindMinigame : MonoBehaviour
     public float flipCooldownTime;  // Minimum time allowed between flips in seconds
     public float acceptanceThreshold;
 
-    private float _speed;           // Degrees rotated by grindstone every second
-    private float _grindBoundX;     // Leftmost extent of grind area centered at 0
-    private float _grindBoundY;     // Rightmost "   "
-    private bool  _flipReady;       // Indicates whether or not sufficient cooldown time has passed since last flip
-    private int   _verticesComplete;
+    private float  _speed;           // Degrees rotated by grindstone every second
+    private float  _grindBoundX;     // Leftmost extent of grind area centered at 0
+    private float  _grindBoundY;     // Rightmost "   "
+    private bool   _flipReady;       // Indicates whether or not sufficient cooldown time has passed since last flip
+    private int    _orientation;
+    private int    _verticesComplete;
     private bool[] _grindComplete;   // Indicates when each point has been ground below acceptanceThreshold
     
     // Start is called before the first frame update
@@ -31,7 +33,15 @@ public class GrindMinigame : MonoBehaviour
         _grindBoundX = grindArea.rect.width  / 2;
         _grindBoundY = grindArea.rect.height / 2;
         _flipReady   = true;
+        _orientation = 0;
         _verticesComplete = 0;
+        GameObject inputObject = GameObject.FindWithTag("hammerout");
+
+        if (inputObject != null)
+        {
+            swordShape.setShape(inputObject.GetComponent<SpriteShapeController>());
+            Destroy(inputObject);
+        }
 
         _grindComplete = new bool[swordShape.numPoints()];
 
@@ -49,6 +59,10 @@ public class GrindMinigame : MonoBehaviour
         if (Input.GetAxis("Space") > 0 && _flipReady)
         {
             swordShape.transform.Rotate(Vector3.forward * 180);
+            if (_orientation == 0)
+                _orientation = 1;
+            else
+                _orientation = 0;
             StartCoroutine("FlipCooldown");
         }
 
@@ -59,7 +73,6 @@ public class GrindMinigame : MonoBehaviour
             {
                 Vector2 worldPos = swordShape.transform.TransformPoint(swordShape.getPoint(i)); // Position of point in world space
                 Vector2 areaPos = grindArea.transform.InverseTransformPoint(worldPos);          // Position of point in local space of grind area
-
 
                 if (-_grindBoundX < areaPos.x && areaPos.x < _grindBoundX &&
                     -_grindBoundY < areaPos.y && areaPos.y < _grindBoundY)
@@ -117,7 +130,7 @@ public class GrindMinigame : MonoBehaviour
 
         // Move blade to mouse position within bounds
         swordShape.transform.position = new Vector3(
-            Mathf.Clamp(mousePosLocal.x, _bladeBoundLeft, _bladeBoundRight),
+            Mathf.Clamp(mousePosLocal.x, _bladeBoundLeft, _bladeBoundRight) - (_bladeBoundRight * _orientation),
             swordShape.transform.position.y,
             swordShape.transform.position.z);
     }

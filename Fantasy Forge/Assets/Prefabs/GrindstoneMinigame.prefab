@@ -419,8 +419,8 @@ MonoBehaviour:
   scrollPower: 30
   friction: 45
   grindDist: 0.075
-  _bladeBoundLeft: -1.75
-  _bladeBoundRight: 1.75
+  _bladeBoundLeft: 0
+  _bladeBoundRight: 4
   flipCooldownTime: 1
   acceptanceThreshold: 0.01
 --- !u!114 &6086972329600629089

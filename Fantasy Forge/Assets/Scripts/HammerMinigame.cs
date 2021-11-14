@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.U2D;
 
 public class HammerMinigame : MonoBehaviour
 {
@@ -60,7 +61,7 @@ public class HammerMinigame : MonoBehaviour
                     {
                         distRemaining = _swordShape.movePoint(i, (hammerRadius - distFromClick) * hitDistanceMultiplier);
 
-                        if (Mathf.Abs(distRemaining.magnitude) < .001) //targetScale)
+                        if (Mathf.Abs(distRemaining.magnitude) < (targetScale - 1) / 2.0) // replace magic number with something using targetScale)
                         {
                             Debug.Log("Vertex " + i +  " complete");
                             _hammerComplete[i] = true;
@@ -73,6 +74,9 @@ public class HammerMinigame : MonoBehaviour
             if (_verticesComplete >= _swordShape.numPoints())
             {
                 Debug.Log("COMPLETE");
+
+                Instantiate(_swordShape.getSpriteShape()).tag = "hammerout";
+
                 GetComponentInParent<Prompt>().promptingInteractable.closePrompt();
             }
 
