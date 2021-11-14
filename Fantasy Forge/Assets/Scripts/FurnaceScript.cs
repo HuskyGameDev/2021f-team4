@@ -41,7 +41,8 @@ public class FurnaceScript : MonoBehaviour
 
         if(timer >= time)
         {
-            Destroy(minigame);
+            GetComponent<Prompt>().promptingInteractable.closePrompt(); 
+            //Destroy(minigame);
         }
 
         heat.value += (float)0.001;
