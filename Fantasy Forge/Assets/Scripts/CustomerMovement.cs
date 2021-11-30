@@ -51,8 +51,8 @@ public class CustomerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Checking to see if customer is to the left of the screen.
-        if (transform.position.x < screenBounds.x)
+        //Checking to see if customer is to the right of the screen.
+        if (transform.position.x > screenBounds.x * -1.2)
         {
             Destroy(this.gameObject);
         }
