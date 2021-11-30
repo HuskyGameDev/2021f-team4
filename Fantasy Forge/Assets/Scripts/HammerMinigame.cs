@@ -30,7 +30,7 @@ public class HammerMinigame : MonoBehaviour
         }
 
         //_swordShape.addTargetBuffer(targetBuffer);
-        _swordShape.scaleTargetBuffer(targetScale);
+        //_swordShape.scaleTargetBuffer(targetScale);
     }
 
     // Update is called once per frame
@@ -61,7 +61,7 @@ public class HammerMinigame : MonoBehaviour
                     {
                         distRemaining = _swordShape.movePoint(i, (hammerRadius - distFromClick) * hitDistanceMultiplier);
 
-                        if (Mathf.Abs(distRemaining.magnitude) < (targetScale - 1) / 2.0) // replace magic number with something using targetScale)
+                        if (Mathf.Abs(distRemaining.magnitude) <= .1) // (targetScale - 1) / 4.0)
                         {
                             Debug.Log("Vertex " + i +  " complete");
                             _hammerComplete[i] = true;
@@ -75,7 +75,7 @@ public class HammerMinigame : MonoBehaviour
             {
                 Debug.Log("COMPLETE");
 
-                Instantiate(_swordShape.getSpriteShape()).tag = "hammerout";
+                //Instantiate(_swordShape.getSpriteShape()).tag = "hammerout";
 
                 GetComponentInParent<Prompt>().promptingInteractable.closePrompt();
             }
