@@ -32,8 +32,14 @@ public class CustomerMovement : MonoBehaviour
         //Wait for customer to enter and start walking
         yield return new WaitForSeconds(1);
         gameObject.GetComponent<Renderer>().enabled = true;
-        yield return new WaitForSeconds(1);
+
         movement.x = 1;
+
+        /*do
+        {
+            movement.x = 1;
+        } while (transform.position.x < screenBounds.x * -.7);
+        */
 
         //Customer waiting for item to be made(patience)
         yield return new WaitForSeconds(10);

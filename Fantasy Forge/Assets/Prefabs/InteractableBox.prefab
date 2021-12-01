@@ -44,11 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f15fd1618a3d08c4fb323a007d090c5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isInRange: 0
   interactKey: 0
-  interactAction:
-    m_PersistentCalls:
-      m_Calls: []
+  promptPrefab: {fileID: 0}
 --- !u!61 &3564927917897000300
 BoxCollider2D:
   m_ObjectHideFlags: 0
