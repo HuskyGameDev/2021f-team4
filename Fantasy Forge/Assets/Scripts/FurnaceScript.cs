@@ -8,7 +8,6 @@ public class FurnaceScript : MonoBehaviour
 
     public Slider bellow;
     public Slider heat;
-    public GameObject complete;
     private float timer;
     public float time;
     public Sprite bellow1;
@@ -17,7 +16,6 @@ public class FurnaceScript : MonoBehaviour
     public Sprite bellow4;
     public Sprite bellow5;
     public Image bellowImage;
-    public GameObject minigame;
 
     // Start is called before the first frame update
     void Start()
@@ -42,7 +40,6 @@ public class FurnaceScript : MonoBehaviour
         if(timer >= time)
         {
             GetComponent<Prompt>().promptingInteractable.closePrompt(); 
-            //Destroy(minigame);
         }
 
         heat.value += (float)0.001;

@@ -637,7 +637,7 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 25660, y: 1440}
   m_ScreenMatchMode: 2
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -838,7 +838,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 2c71bb8b05e25b148ad1cd98887817c0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 12778a3485c207248becfa5ec5ec3d7b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -895,15 +895,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bellow: {fileID: 8510620219681458800}
   heat: {fileID: 1217424058995053647}
-  complete: {fileID: 0}
   time: 2
-  bellow1: {fileID: 21300000, guid: 2c71bb8b05e25b148ad1cd98887817c0, type: 3}
-  bellow2: {fileID: 21300000, guid: 1c440c98602da9a45b8796e325adf748, type: 3}
-  bellow3: {fileID: 21300000, guid: e810ec0ae836e8f488033a190abb456d, type: 3}
-  bellow4: {fileID: 21300000, guid: 46d5968aec9c6b646a725af884cd09a0, type: 3}
-  bellow5: {fileID: 21300000, guid: 4b756feaf89cc7649a61d83933fdff67, type: 3}
+  bellow1: {fileID: 21300000, guid: 12778a3485c207248becfa5ec5ec3d7b, type: 3}
+  bellow2: {fileID: 21300000, guid: 23315e07149254244b548b591a3f475d, type: 3}
+  bellow3: {fileID: 21300000, guid: 3ed785bfdf193024bb48b661660861c4, type: 3}
+  bellow4: {fileID: 21300000, guid: 96c218345b5d3e04b9f03929d6ced762, type: 3}
+  bellow5: {fileID: 21300000, guid: 94ce79c7123a5974ca47c94005883a40, type: 3}
   bellowImage: {fileID: 526331138865137423}
-  minigame: {fileID: 5691319474035242453}
 --- !u!114 &3941962874320482587
 MonoBehaviour:
   m_ObjectHideFlags: 0

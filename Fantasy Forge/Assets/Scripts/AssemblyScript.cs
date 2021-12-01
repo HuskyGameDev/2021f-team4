@@ -15,7 +15,6 @@ public class AssemblyScript : MonoBehaviour
     public GameObject hiltObject;
     public int index = 0;
     public GameObject outHilt;
-    public GameObject prefab;
 
     // Start is called before the first frame update
     void Start()
@@ -55,6 +54,6 @@ public class AssemblyScript : MonoBehaviour
     {
         SpriteRenderer outSprite = outHilt.GetComponent<SpriteRenderer>();
         outSprite.sprite = hilts[index];
-        Destroy(prefab);
+        GetComponent<Prompt>().promptingInteractable.closePrompt();
     }
 }
