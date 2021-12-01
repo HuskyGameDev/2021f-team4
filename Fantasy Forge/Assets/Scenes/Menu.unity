@@ -787,7 +787,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: A s s e m b l y
+  m_Text: '
+
+    A s s e m b l y'
 --- !u!222 &437430444
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1625,8 +1627,7 @@ MonoBehaviour:
     in a timely fashion. Play through a series of minigames to complete requests
     before your customers get impatient !
 
-    Click through other tabs to learn
-    more about minigames .'
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f67709113aa7ffc439b0111a0d4f8f16, type: 2}
   m_sharedMaterial: {fileID: -3275882650783378147, guid: f67709113aa7ffc439b0111a0d4f8f16,
@@ -3009,7 +3010,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: G r i n d s t o n e
+  m_Text: '
+
+    G r i n d s t o n e'
 --- !u!222 &1213362181
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4403,7 +4406,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: H a m m e r i n g
+  m_Text: '
+
+    H a m m e r i n g'
 --- !u!222 &1950359395
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4831,7 +4836,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: F u r n a c e
+  m_Text: '
+
+    F u r n a c e'
 --- !u!222 &2010859501
 CanvasRenderer:
   m_ObjectHideFlags: 0
