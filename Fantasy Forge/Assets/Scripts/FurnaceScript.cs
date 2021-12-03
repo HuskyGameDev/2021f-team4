@@ -16,6 +16,7 @@ public class FurnaceScript : MonoBehaviour
     public Sprite bellow4;
     public Sprite bellow5;
     public Image bellowImage;
+    public Animator animator;
 
     // Start is called before the first frame update
     void Start()
@@ -31,10 +32,17 @@ public class FurnaceScript : MonoBehaviour
         if(heat.value >= 2 && heat.value <= 4)
         {
             timer += Time.deltaTime;
+            animator.SetInteger("fire", 2);
+        }
+        else if(heat.value > 4)
+        {
+            timer = 0;
+            animator.SetInteger("fire", 1);
         }
         else
         {
             timer = 0;
+            animator.SetInteger("fire", 3);
         }
 
         if(timer >= time)

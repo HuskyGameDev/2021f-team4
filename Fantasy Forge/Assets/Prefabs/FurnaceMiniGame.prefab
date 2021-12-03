@@ -296,8 +296,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -471, y: -194}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -526.8371, y: -281.24554}
+  m_SizeDelta: {x: 88.8326, y: 82.5509}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8947002616766312991
 CanvasRenderer:
@@ -327,7 +327,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -3966301110949134133, guid: 05f8c875d1831d2468849fa922258f21,
+  m_Sprite: {fileID: 8611469903878812859, guid: 14726fb5e4c65e746928d02e8ff77bf1,
     type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -902,6 +902,7 @@ MonoBehaviour:
   bellow4: {fileID: 21300000, guid: 96c218345b5d3e04b9f03929d6ced762, type: 3}
   bellow5: {fileID: 21300000, guid: 94ce79c7123a5974ca47c94005883a40, type: 3}
   bellowImage: {fileID: 526331138865137423}
+  animator: {fileID: 8220973134340561907}
 --- !u!114 &3941962874320482587
 MonoBehaviour:
   m_ObjectHideFlags: 0
