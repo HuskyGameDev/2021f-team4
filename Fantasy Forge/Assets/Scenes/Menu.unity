@@ -404,9 +404,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Grindstone Instructions
-
-'
+  m_text: "Rapidly scroll the mouse wheel downwards to turn the grindstone\nMove
+    the mouse horizontally to position the blade against the grindstone\u2019s surface\r\nPress
+    space to fip the blade the change the edge being ground\r\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f67709113aa7ffc439b0111a0d4f8f16, type: 2}
   m_sharedMaterial: {fileID: -3275882650783378147, guid: f67709113aa7ffc439b0111a0d4f8f16,
@@ -434,8 +434,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 150
-  m_fontSizeBase: 150
+  m_fontSize: 130
+  m_fontSizeBase: 130
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1106,7 +1106,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Assembly Instructions
+  m_text: Click buttons to make a selection
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f67709113aa7ffc439b0111a0d4f8f16, type: 2}
   m_sharedMaterial: {fileID: -3275882650783378147, guid: f67709113aa7ffc439b0111a0d4f8f16,
@@ -3171,9 +3171,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Furnace Instructions
-
-'
+  m_text: Drag the bellows up and down with the left mouse button
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f67709113aa7ffc439b0111a0d4f8f16, type: 2}
   m_sharedMaterial: {fileID: -3275882650783378147, guid: f67709113aa7ffc439b0111a0d4f8f16,
@@ -4473,11 +4471,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'In Fantasy Forge, you are a blacksmith that must fulfill customer requests
+  m_text: "In Fantasy Forge, you are a blacksmith that must fulfill customer requests
     in a timely fashion. Play through a series of minigames to complete requests
-    before your customers get impatient !
-
-'
+    before your customers get impatient ! \nPress the 'e' key to enter and exit minigames.\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f67709113aa7ffc439b0111a0d4f8f16, type: 2}
   m_sharedMaterial: {fileID: -3275882650783378147, guid: f67709113aa7ffc439b0111a0d4f8f16,
@@ -4505,8 +4501,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 150
-  m_fontSizeBase: 150
+  m_fontSize: 140
+  m_fontSizeBase: 140
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -8490,9 +8486,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Hammering Instructions
-
-'
+  m_text: Click on the sprite to strike the metal and move the nearby area into shape
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f67709113aa7ffc439b0111a0d4f8f16, type: 2}
   m_sharedMaterial: {fileID: -3275882650783378147, guid: f67709113aa7ffc439b0111a0d4f8f16,
