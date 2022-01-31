@@ -11,7 +11,7 @@ public class CharacterMovement : MonoBehaviour
 
     public Animator animator;
 
-    Vector2 movement;
+    public Vector2 movement;
 
     public bool canMove; // using in the TextBoxManager script to stop player from moving while interacting
     

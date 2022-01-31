@@ -66,6 +66,8 @@ public class Interactable : MonoBehaviour
     public void openPrompt()
     {
         _player.canMove = false;
+        _player.movement = Vector2.zero;
+        _player.animator.SetFloat("Speed", _player.movement.sqrMagnitude);
         _promptOpen = true;
         _promptInstance = Instantiate(promptPrefab);
         _promptInstance.GetComponent<Prompt>().promptingInteractable = this;
