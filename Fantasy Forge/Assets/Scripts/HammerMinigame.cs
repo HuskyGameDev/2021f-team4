@@ -61,7 +61,7 @@ public class HammerMinigame : MonoBehaviour
                     {
                         distRemaining = _swordShape.movePoint(i, (hammerRadius - distFromClick) * hitDistanceMultiplier);
 
-                        if (Mathf.Abs(distRemaining.magnitude) <= .1) // (targetScale - 1) / 4.0)
+                        if (Mathf.Abs(distRemaining.magnitude) <= (targetScale - 1) / 4.0) //.1) // 
                         {
                             Debug.Log("Vertex " + i +  " complete");
                             _hammerComplete[i] = true;
@@ -75,7 +75,7 @@ public class HammerMinigame : MonoBehaviour
             {
                 Debug.Log("COMPLETE");
 
-                //Instantiate(_swordShape.getSpriteShape()).tag = "hammerout";
+                Instantiate(_swordShape.getSpriteShape()).tag = "hammerout";
 
                 GetComponentInParent<Prompt>().promptingInteractable.closePrompt();
             }
