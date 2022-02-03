@@ -32,25 +32,13 @@ public class CustomerMovement : MonoBehaviour
         //Wait for customer to enter and start walking
         yield return new WaitForSeconds(1);
         gameObject.GetComponent<Renderer>().enabled = true;
-
         movement.x = 1;
-
-        /*do
-        {
-            movement.x = 1;
-        } while (transform.position.x < screenBounds.x * -.7);
-        */
 
         //Customer waiting for item to be made(patience)
         yield return new WaitForSeconds(10);
 
-        //Customer either receives item or loses patience and leaves.
-        movement.x = 0;
-        yield return new WaitForSeconds(1);
-        movement.y = 1;
-        yield return new WaitForSeconds(.5f);
-        movement.y = 0;
-        movement.x = -1;
+        //Customer leaving after losing patience
+        movement.x = 1;
     }
 
 
@@ -58,7 +46,7 @@ public class CustomerMovement : MonoBehaviour
     void Update()
     {
         //Checking to see if customer is to the right of the screen.
-        if (transform.position.x > screenBounds.x * -1.2)
+        if (transform.position.x > screenBounds.x * -.8)
         {
             Destroy(this.gameObject);
         }
@@ -69,10 +57,10 @@ public class CustomerMovement : MonoBehaviour
         animator.SetFloat("Speed", movement.sqrMagnitude);
     }
 
-    // Detects if the customer runs into the desk or the door
+    // Detects if the customer runs into the object at the counter
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.name == "Desk")
+        if (collision.gameObject.name == "Front")
         {
             movement.x = 0;
         }
