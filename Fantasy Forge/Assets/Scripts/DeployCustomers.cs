@@ -15,11 +15,12 @@ public class DeployCustomers : MonoBehaviour
         StartCoroutine(customerWave());
     }
 
-    // Method to spawn the customer in a specific location on screen.
+    // Method to spawn the customer on screen in a specific location.
     private void spawnCustomer()
     {
         GameObject customer = Instantiate(customerPrefab) as GameObject;
-        customer.transform.position = new Vector2(screenBounds.x * 1, screenBounds.y * 1); //Placement of customer, setting the x and y values.
+        customer.transform.position = new Vector2((float) -3.4, 6);
+        //cust.transform.position.Set(1, 1, 1);
     }
 
     //Timing for when customers spawn.

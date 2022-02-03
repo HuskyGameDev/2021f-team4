@@ -19,28 +19,31 @@ public class CustomerMovement : MonoBehaviour
         gameObject.GetComponent<Renderer>().enabled = false;
 
         //Allows for a wait time to be implemented(for patience)
-        StartCoroutine(patience());
+        StartCoroutine(appear());
 
         //Adding screenbound so customer disappears after leaving the screen.
         screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.x, Camera.main.transform.position.z));
     }
 
-    // The Behavior of the customers
+    // The starting behavior of customers
+    IEnumerator appear()
+    {
+        yield return new WaitForSeconds(1);
+        movement.x = 0;
+        gameObject.GetComponent<Renderer>().enabled = true;
+        yield return new WaitForSeconds(1);
+        movement.x = 1;
+    }
+
+    // The patience of the customers
     IEnumerator patience()
     {
-
-        //Wait for customer to enter and start walking
-        yield return new WaitForSeconds(1);
-        gameObject.GetComponent<Renderer>().enabled = true;
-        movement.x = 1;
-
         //Customer waiting for item to be made(patience)
         yield return new WaitForSeconds(10);
 
         //Customer leaving after losing patience
         movement.x = 1;
     }
-
 
     // Update is called once per frame
     void Update()
@@ -57,12 +60,18 @@ public class CustomerMovement : MonoBehaviour
         animator.SetFloat("Speed", movement.sqrMagnitude);
     }
 
-    // Detects if the customer runs into the object at the counter
+    // Detects if the customer runs into the object at the counter or another customer
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        if (collision.gameObject.name == "Customer(Clone)")
+        {
+            movement.x = 0;
+        }
+
         if (collision.gameObject.name == "Front")
         {
             movement.x = 0;
+            StartCoroutine(patience());
         }
     }
 
