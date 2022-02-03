@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class CustomerMovement : MonoBehaviour
 {
-    private float moveSpeed = 4f; //Customer speed
+    private float moveSpeed = 2f; //Customer speed
     public Rigidbody2D customerRB;
     public Animator animator; //Allows for animations of customer
     private Vector2 movement;
     private Vector2 screenBounds;
-
 
 
     // Start is called before the first frame update
@@ -25,6 +24,7 @@ public class CustomerMovement : MonoBehaviour
         screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.x, Camera.main.transform.position.z));
     }
 
+
     // The starting behavior of customers
     IEnumerator appear()
     {
@@ -35,6 +35,13 @@ public class CustomerMovement : MonoBehaviour
         movement.x = 1;
     }
 
+    // Adding a buffer second to make line movement look more fluid
+    IEnumerator second()
+    {
+        yield return new WaitForSeconds((float) .5);
+        movement.x = 1;
+    }
+
     // The patience of the customers
     IEnumerator patience()
     {
@@ -42,8 +49,10 @@ public class CustomerMovement : MonoBehaviour
         yield return new WaitForSeconds(10);
 
         //Customer leaving after losing patience
+        gameObject.GetComponent<PolygonCollider2D>().enabled = false;
         movement.x = 1;
     }
+
 
     // Update is called once per frame
     void Update()
@@ -60,8 +69,9 @@ public class CustomerMovement : MonoBehaviour
         animator.SetFloat("Speed", movement.sqrMagnitude);
     }
 
+
     // Detects if the customer runs into the object at the counter or another customer
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.name == "Customer(Clone)")
         {
@@ -73,6 +83,12 @@ public class CustomerMovement : MonoBehaviour
             movement.x = 0;
             StartCoroutine(patience());
         }
+    }
+
+    // Detects if the customer in front has walked away
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        StartCoroutine(second());
     }
 
 
