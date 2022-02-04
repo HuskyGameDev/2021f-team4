@@ -20,6 +20,7 @@ public class DeployCustomers : MonoBehaviour
     {
         GameObject customer = Instantiate(customerPrefab) as GameObject;
         customer.transform.position = new Vector2((float) -3.4, 6);
+        //cust.transform.position.Set(1, 1, 1);
     }
 
     //Timing for when customers spawn.
