@@ -4,21 +4,12 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
-    public GameObject InventoryPanel;
-
-    private ArrayList _inventorySlots;
+    public ArrayList items;
 
     // Start is called before the first frame update
     void Start()
     {
-        _inventorySlots = new ArrayList(InventoryPanel.GetComponentsInChildren<Transform>().Length - 1);
-
-        foreach (Transform t in InventoryPanel.GetComponentsInChildren<Transform>())
-        {
-            if (t.gameObject != InventoryPanel)
-                _inventorySlots.Add(t.transform);
-        }
-        Debug.Log("Inventory slots: " + _inventorySlots.Count);
+        items = new ArrayList();
     }
 
 }

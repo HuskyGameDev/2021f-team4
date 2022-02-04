@@ -31,19 +31,13 @@ public class CustomerMovement : MonoBehaviour
         yield return new WaitForSeconds(1);
         movement.x = 0;
         gameObject.GetComponent<Renderer>().enabled = true;
-<<<<<<< Updated upstream
         yield return new WaitForSeconds(1);
-=======
->>>>>>> Stashed changes
         movement.x = 1;
     }
 
-<<<<<<< Updated upstream
     // The patience of the customers
     IEnumerator patience()
     {
-=======
->>>>>>> Stashed changes
         //Customer waiting for item to be made(patience)
         yield return new WaitForSeconds(10);
 
@@ -66,7 +60,6 @@ public class CustomerMovement : MonoBehaviour
         animator.SetFloat("Speed", movement.sqrMagnitude);
     }
 
-<<<<<<< Updated upstream
     // Detects if the customer runs into the object at the counter or another customer
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -75,11 +68,6 @@ public class CustomerMovement : MonoBehaviour
             movement.x = 0;
         }
 
-=======
-    // Detects if the customer runs into the object at the counter
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
->>>>>>> Stashed changes
         if (collision.gameObject.name == "Front")
         {
             movement.x = 0;
