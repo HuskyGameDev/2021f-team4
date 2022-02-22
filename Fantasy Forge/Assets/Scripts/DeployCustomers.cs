@@ -6,6 +6,7 @@ public class DeployCustomers : MonoBehaviour
 {
     public GameObject customerPrefab; //Reference to customer prefab
     public float respawnTime = 1.0f; //How often to spawn customers.
+    public Vector2 startPos;
     private Vector2 screenBounds;
 
     // Start is called before the first frame update
@@ -19,7 +20,7 @@ public class DeployCustomers : MonoBehaviour
     private void spawnCustomer()
     {
         GameObject customer = Instantiate(customerPrefab) as GameObject;
-        customer.transform.position = new Vector2((float) -3.4, 6);
+        customer.transform.position = startPos;
         //cust.transform.position.Set(1, 1, 1);
     }
 
