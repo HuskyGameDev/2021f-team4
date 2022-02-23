@@ -14,10 +14,14 @@ public class HammerMinigame : MonoBehaviour
     private bool _hitReady;             // Indicates whether or not sufficient cooldown time has passed since last hit
     private bool[] _hammerComplete;     // Indicates when each point has been ground below acceptanceThreshold
     private int _verticesComplete;
+    private InventoryItem _inputItem;
 
     // Start is called before the first frame update
     void Start()
     {
+        _inputItem = GetComponentInParent<Prompt>().inputItem;
+        Debug.Log("Input to hammer is " + _inputItem.itemState + " " + _inputItem.metalType);
+
         _swordShape = GetComponent<ChangeShape>();
         _hitReady = true;
 

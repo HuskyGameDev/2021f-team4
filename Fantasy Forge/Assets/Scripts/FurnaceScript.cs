@@ -27,6 +27,8 @@ public class FurnaceScript : MonoBehaviour
     public GameObject visualTimer;
     public GameObject hand;
 
+    private InventoryItem _inputItem;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -37,6 +39,9 @@ public class FurnaceScript : MonoBehaviour
         minigameTiming = minigameDuration;
         timerText = visualTimer.GetComponent<Text>();
         hand.SetActive(false);
+
+        _inputItem = GetComponent<Prompt>().inputItem;
+        Debug.Log("Input to furnace is " + _inputItem.itemState + " " + _inputItem.metalType);
     }
 
     // Update is called once per frame
@@ -64,6 +69,10 @@ public class FurnaceScript : MonoBehaviour
 
         if(timer >= time)
         {
+            // Convert input item from raw to ingot
+            _inputItem.itemState = ItemState.Ingot;
+            Debug.Log("Output from furnace is " + _inputItem.itemState + " " + _inputItem.metalType);
+
             GetComponent<Prompt>().promptingInteractable.closePrompt(); 
         }
 

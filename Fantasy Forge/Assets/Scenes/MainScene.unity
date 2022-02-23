@@ -469,6 +469,11 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 1047435278056389884, guid: 7e981201b966c854aa9a535bf0e272fd,
         type: 3}
+      propertyPath: requiredItem
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1047435278056389884, guid: 7e981201b966c854aa9a535bf0e272fd,
+        type: 3}
       propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.size
       value: 0
       objectReference: {fileID: 0}
@@ -699,6 +704,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5492854539800111153, guid: 9c85ed425cd9d8c4087903e817ea78ea,
         type: 3}
+    - target: {fileID: 1047435278056389884, guid: 7e981201b966c854aa9a535bf0e272fd,
+        type: 3}
+      propertyPath: requiredItem
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1047435278056389884, guid: 7e981201b966c854aa9a535bf0e272fd,
         type: 3}
       propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.size
@@ -1379,6 +1389,7 @@ GameObject:
   - component: {fileID: 1698476375}
   - component: {fileID: 1698476374}
   - component: {fileID: 1698476379}
+  - component: {fileID: 1698476380}
   m_Layer: 0
   m_Name: Blacksmith
   m_TagString: Player
@@ -1525,6 +1536,19 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: -0.43}
   m_Size: {x: 0.6, y: 0.15}
   m_Direction: 1
+--- !u!114 &1698476380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1698476373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af2dad45af455cd48bb57b67de9e1124, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventoryCapacity: 3
 --- !u!1 &1866222574
 GameObject:
   m_ObjectHideFlags: 0
@@ -2128,6 +2152,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4680090188988248977, guid: 93b3d215696fbd944b52d75d145993a2,
         type: 3}
+    - target: {fileID: 1047435278056389884, guid: 7e981201b966c854aa9a535bf0e272fd,
+        type: 3}
+      propertyPath: requiredItem
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1047435278056389884, guid: 7e981201b966c854aa9a535bf0e272fd,
         type: 3}
       propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.size

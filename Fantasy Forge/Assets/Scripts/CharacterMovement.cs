@@ -42,7 +42,7 @@ public class CharacterMovement : MonoBehaviour
         animator.SetFloat("Horizontal", movement.x);
         animator.SetFloat("Vertical", movement.y);
         animator.SetFloat("Speed", movement.sqrMagnitude);
-        print(GameObject.Find("Blacksmith").transform.position.y);
+        //print(GameObject.Find("Blacksmith").transform.position.y);
     }
 
     private void FixedUpdate()

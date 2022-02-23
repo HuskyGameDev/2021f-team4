@@ -5,4 +5,5 @@ using UnityEngine;
 public class Prompt : MonoBehaviour
 {
     public Interactable promptingInteractable { get; set; }
+    public InventoryItem inputItem { get; set; }
 }
