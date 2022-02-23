@@ -25,7 +25,8 @@ public class GrindMinigame : MonoBehaviour
     private int    _orientation;
     private int    _verticesComplete;
     private bool[] _grindComplete;   // Indicates when each point has been ground below acceptanceThreshold
-    
+    private InventoryItem _inputItem;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,13 +36,16 @@ public class GrindMinigame : MonoBehaviour
         _flipReady   = true;
         _orientation = 0;
         _verticesComplete = 0;
-        GameObject inputObject = GameObject.FindWithTag("hammerout");
 
+        _inputItem = GetComponentInParent<Prompt>().inputItem;
+        Debug.Log("Input to grindstone is " + _inputItem.itemState + " " + _inputItem.metalType);
+
+        /*
         if (inputObject != null)
         {
             swordShape.setShape(inputObject.GetComponent<SpriteShapeController>());
             Destroy(inputObject);
-        }
+        }*/
 
         _grindComplete = new bool[swordShape.numPoints()];
 
@@ -90,7 +94,9 @@ public class GrindMinigame : MonoBehaviour
 
         if (_verticesComplete >= swordShape.numPoints())
         {
-            Debug.Log("COMPLETE");
+            _inputItem.itemState = ItemState.Blade;
+            Debug.Log("Output from grindstone is " + _inputItem.itemState + " " + _inputItem.metalType);
+
             GetComponent<Prompt>().promptingInteractable.closePrompt();
             
         }

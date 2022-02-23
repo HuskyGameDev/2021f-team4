@@ -79,7 +79,10 @@ public class HammerMinigame : MonoBehaviour
             {
                 Debug.Log("COMPLETE");
 
-                Instantiate(_swordShape.getSpriteShape()).tag = "hammerout";
+                //Instantiate(_swordShape.getSpriteShape()).tag = "hammerout";
+                // Convert input item from raw to ingot
+                _inputItem.itemState = ItemState.Shape;
+                Debug.Log("Output from hammer is " + _inputItem.itemState + " " + _inputItem.metalType);
 
                 GetComponentInParent<Prompt>().promptingInteractable.closePrompt();
             }

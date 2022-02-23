@@ -15,12 +15,16 @@ public class Inventory : MonoBehaviour
         _items = new InventoryItem[inventoryCapacity];
         _itemCount = 0;
 
-        // DBUG
-        InventoryItem testItem = new InventoryItem();
-        testItem.itemState = ItemState.Raw;
-        testItem.metalType = MetalType.Gold;
+        // DEBUG
+        InventoryItem testItem1 = new InventoryItem();
+        testItem1.itemState = ItemState.Ingot;
+        testItem1.metalType = MetalType.Gold;
+        InventoryItem testItem2 = new InventoryItem();
+        testItem2.itemState = ItemState.Shape;
+        testItem2.metalType = MetalType.Iron;
 
-        addItem(testItem);
+        addItem(testItem1);
+        addItem(testItem2);
     }
 
     public bool addItem(InventoryItem item)
