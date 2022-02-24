@@ -65,16 +65,18 @@ public class CustomerMovement : MonoBehaviour
       var positionX  = GameObject.Find("Blacksmith").transform.position.x;
       var positionY = GameObject.Find("Blacksmith").transform.position.y;
 
-        if(Input.GetKeyDown("e") &&  positionX > 1.2f && positionX < 4.3f && positionY >4.0f){
+        if (Input.GetKeyDown("e") && positionX > 1.2f && positionX < 4.3f && positionY > 4.0f)
+        {
             print("e key was pressed");
             print(positionX);
             movement.x = 1;
         }
 
         //Checking to see if customer is to the right of the screen.
-        if (transform.position.x > screenBounds.x * -.8)
+        if (transform.position.x > screenBounds.x * -.45)
         {
             Destroy(this.gameObject);
+            DeployCustomers.customerNum--;
         }
 
         //Animation for customer to walk in different directions
@@ -83,8 +85,14 @@ public class CustomerMovement : MonoBehaviour
         animator.SetFloat("Speed", movement.sqrMagnitude);
     }
 
-    // Detects if the customer runs into the object at the counter or another customer
-    private void OnCollisionEnter2D(Collision2D collision)
+    // Detects if the customer in front has walked away
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        movement.x = 1;
+    }
+
+    // Detects if the customer encounters the trigger for the front desk or another customer
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.name == "Customer(Clone)")
         {
@@ -98,10 +106,9 @@ public class CustomerMovement : MonoBehaviour
         }
     }
 
-
     private void FixedUpdate()
     {
-        //Movement for the costumer
+        //Movement for the customer
         customerRB.MovePosition(customerRB.position + movement * moveSpeed * Time.fixedDeltaTime);
     }
 }

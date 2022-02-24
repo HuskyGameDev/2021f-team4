@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +9,7 @@ public class DeployCustomers : MonoBehaviour
     public float respawnTime = 1.0f; //How often to spawn customers.
     public Vector2 startPos;
     private Vector2 screenBounds;
+    public static int customerNum = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -19,9 +21,13 @@ public class DeployCustomers : MonoBehaviour
     // Method to spawn the customer on screen in a specific location.
     private void spawnCustomer()
     {
-        GameObject customer = Instantiate(customerPrefab) as GameObject;
-        customer.transform.position = startPos;
-        //cust.transform.position.Set(1, 1, 1);
+        if (customerNum < 5)
+        {
+            GameObject customer = Instantiate(customerPrefab) as GameObject;
+            customer.transform.position = startPos;
+            //cust.transform.position.Set(1, 1, 1);
+            customerNum++;
+        }
     }
 
     //Timing for when customers spawn.
