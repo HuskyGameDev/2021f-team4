@@ -5,7 +5,7 @@ using UnityEngine;
 public class DeployCustomers : MonoBehaviour
 {
     public GameObject customerPrefab; //Reference to customer prefab
-    public float respawnTime = 1.0f; //How often to spawn customers.
+    public float respawnTime = 3.0f; //How often to spawn customers.
     private Vector2 screenBounds;
 
     // Start is called before the first frame update
