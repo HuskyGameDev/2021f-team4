@@ -5,15 +5,39 @@ using UnityEngine;
 public class Inventory : MonoBehaviour
 {
     public int inventoryCapacity;
+    public GameObject uiPanel;
+    public Sprite itemSlotSprite;
+    public float panelWidth;        // Shortcut to calculating size from camera and canvas. In units
+    public float slotSize;          // Size of each inventory slot in canvas pixels
 
     private InventoryItem[] _items;
+    private GameObject[]    _itemPanels;
     private int _itemCount;
 
     // Start is called before the first frame update
     void Start()
     {
         _items = new InventoryItem[inventoryCapacity];
+        _itemPanels = new GameObject[inventoryCapacity];
         _itemCount = 0;
+
+        float panelSpacing = panelWidth / (inventoryCapacity + 1);
+        int x = 0;
+
+        for (float i = -panelWidth / 2 + panelSpacing; i < panelWidth / 2; i += panelSpacing)
+        {
+            GameObject itemPanel = new GameObject();
+            SpriteRenderer itemPanelSprite = itemPanel.AddComponent<SpriteRenderer>();
+            itemPanelSprite.sprite = itemSlotSprite;
+            itemPanelSprite.sortingOrder = 1;
+
+            itemPanel.transform.parent = uiPanel.transform;
+            itemPanel.transform.position = uiPanel.transform.position + new Vector3(i, 0, 0);
+            itemPanel.transform.localScale = new Vector3(slotSize, slotSize, 1);
+
+            _itemPanels[x++] = itemPanel;
+
+        }
 
         // DEBUG
         InventoryItem testItem1 = new InventoryItem();
