@@ -47,7 +47,7 @@ public class Inventory : MonoBehaviour
         testItem2.itemState = ItemState.Shape;
         testItem2.metalType = MetalType.Iron;
         InventoryItem testItem3 = new InventoryItem();
-        testItem3.itemState = ItemState.Blade;
+        testItem3.itemState = ItemState.Raw;
         testItem3.metalType = MetalType.Emerald;
 
         addItem(testItem1);
