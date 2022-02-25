@@ -26,9 +26,17 @@ public enum WoodType
     Birch
 }
 
+public enum HiltType
+{
+    Hilt1,
+    Hilt2,
+    Hilt3
+}
+
 public class InventoryItem
 {
     public ItemState itemState;
     public MetalType metalType;   // Always applicable
     public WoodType  woodType;    // Only applicable after construction
+    public HiltType hiltType;     //Only applicable after assembly
 }

@@ -507,12 +507,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccf10b49f65587c47b61704689cf4d53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hilt1: {fileID: 21300000, guid: 6ea5734d320444e4fbbb428203397ac0, type: 3}
-  hilt2: {fileID: 21300000, guid: 2ea94c43633785d47a1b16f3a524aa02, type: 3}
-  hilt3: {fileID: 21300000, guid: 7aad3010b34542948994207298791efb, type: 3}
-  hilt4: {fileID: 21300000, guid: e185b8af1d5d276419b7a383f4f640e9, type: 3}
+  hilt1: {fileID: 21300000, guid: 825435b040fc39948955c72122e53f53, type: 3}
+  hilt2: {fileID: 21300000, guid: 2cd8d0913acffb846952671cb52586b3, type: 3}
+  hilt3: {fileID: 21300000, guid: 2f3dbe37c04db0046abc1b584fc01ae4, type: 3}
   hiltObject: {fileID: 6174571132073984450}
-  index: 0
+  swordObject: {fileID: 6900238168770028231}
+  ironSword: {fileID: 21300000, guid: 766e7f816853f9d4a9bfe058c98d5544, type: 3}
+  goldSword: {fileID: 21300000, guid: 53978f6214c52bf4ea60cb664ed3e5b3, type: 3}
+  silverSword: {fileID: 21300000, guid: 6656f71fdd894ff45af4cd6ba9fdc391, type: 3}
+  emeraldSword: {fileID: 21300000, guid: ddda5bdc009aeab4f9da44a68bdedea5, type: 3}
 --- !u!1 &2952261504226444413
 GameObject:
   m_ObjectHideFlags: 0
@@ -834,7 +837,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -19.529, y: 183.29}
+  m_AnchoredPosition: {x: -116, y: -134}
   m_SizeDelta: {x: 889.44, y: 1073.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4408629963293976353
@@ -865,7 +868,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: dfb77ed2372620b40adf66417e0672a9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 825435b040fc39948955c72122e53f53, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -909,7 +912,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -19.53, y: 183.2897}
+  m_AnchoredPosition: {x: 305, y: 294}
   m_SizeDelta: {x: 889.44, y: 1073.4307}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6224415859443279407
@@ -940,7 +943,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 34d964bfc5ee71a409505265e2efa6d8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 766e7f816853f9d4a9bfe058c98d5544, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

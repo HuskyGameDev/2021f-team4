@@ -26,8 +26,10 @@ public class FurnaceScript : MonoBehaviour
     private Text timerText;
     public GameObject visualTimer;
     public GameObject hand;
+    public Animator dropAnim;
 
     private InventoryItem _inputItem;
+    private Inventory _playerInventory; // Inventory attached to palyer object
 
     // Start is called before the first frame update
     void Start()
@@ -35,12 +37,33 @@ public class FurnaceScript : MonoBehaviour
         heat.value = 20;
         bellow.value = (float)22.5;
         bellowImage.sprite = bellow1;
+
+        _inputItem = GetComponent<Prompt>().inputItem;
+
+        if (_inputItem.metalType == MetalType.Iron)
+        {
+            dropAnim.SetInteger("MetalType", 0);
+        }
+        else if (_inputItem.metalType == MetalType.Gold)
+        {
+            dropAnim.SetInteger("MetalType", 1);
+        }
+        else if (_inputItem.metalType == MetalType.Silver)
+        {
+            dropAnim.SetInteger("MetalType", 2);
+        }
+        else if (_inputItem.metalType == MetalType.Emerald)
+        {
+            dropAnim.SetInteger("MetalType", 3);
+        }
+
         StartCoroutine(IngotDrop(dropDuration));
+
         minigameTiming = minigameDuration;
         timerText = visualTimer.GetComponent<Text>();
         hand.SetActive(false);
 
-        _inputItem = GetComponent<Prompt>().inputItem;
+        _playerInventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
         Debug.Log("Input to furnace is " + _inputItem.itemState + " " + _inputItem.metalType);
     }
 
@@ -54,6 +77,7 @@ public class FurnaceScript : MonoBehaviour
         }
         else if(heat.value <= 1)
         {
+            _playerInventory.removeItem(_inputItem);
             GetComponent<Prompt>().promptingInteractable.closePrompt();
         }
         else if(heat.value > 10)
@@ -85,6 +109,7 @@ public class FurnaceScript : MonoBehaviour
         }
         if (minigameTiming <= 0)
         {
+            _playerInventory.removeItem(_inputItem);
             GetComponent<Prompt>().promptingInteractable.closePrompt();
         }
     }
