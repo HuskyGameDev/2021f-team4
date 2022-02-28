@@ -39,7 +39,7 @@ public class CustomerMovement : MonoBehaviour
     {
         yield return new WaitForSeconds(1);
         movement.x = 0;
-        SoundManager.PlaySound("Bell Walk 2");  // Audio for when customer enters
+        Sound.PlaySound("Bell Walk 2");  // Audio for when customer enters
         gameObject.GetComponent<Renderer>().enabled = true;
         yield return new WaitForSeconds(1);
         RandomNum=  UnityEngine.Random.Range(10.0f,20.0f);
