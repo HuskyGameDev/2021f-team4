@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour
 {
     public int inventoryCapacity;
     public GameObject uiPanel;
     public Sprite itemSlotSprite;
+    public Text  inventoryText;
     public float panelWidth;        // Shortcut to calculating size from camera and canvas. In units
     public float slotSize;          // Size of each inventory slot in canvas pixels
 
@@ -41,10 +43,10 @@ public class Inventory : MonoBehaviour
 
         // DEBUG
         InventoryItem testItem1 = new InventoryItem();
-        testItem1.itemState = ItemState.Ingot;
+        testItem1.itemState = ItemState.Raw;
         testItem1.metalType = MetalType.Gold;
         InventoryItem testItem2 = new InventoryItem();
-        testItem2.itemState = ItemState.Shape;
+        testItem2.itemState = ItemState.Raw;
         testItem2.metalType = MetalType.Iron;
         InventoryItem testItem3 = new InventoryItem();
         testItem3.itemState = ItemState.Raw;
@@ -66,6 +68,7 @@ public class Inventory : MonoBehaviour
             {
                 _items[i] = item;
                 _itemCount++;
+                updateText();
                 return true;
             }
         }
@@ -80,6 +83,7 @@ public class Inventory : MonoBehaviour
             InventoryItem returnItem = _items[index];
             _items[index] = null;
             _itemCount--;
+            updateText();
             return returnItem;
         }
 
@@ -120,6 +124,22 @@ public class Inventory : MonoBehaviour
         }
 
         return null;
+    }
+
+    public void updateText()
+    {
+        string inventoryString = "";
+        for (int i = 0; i < inventoryCapacity; i++)
+        {
+            if (_items[i] != null)
+            {
+                inventoryString += _items[i].toString();
+            }
+
+            inventoryString += "\n";
+        }
+
+        inventoryText.text = inventoryString;
     }
 
 }
