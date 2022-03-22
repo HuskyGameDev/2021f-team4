@@ -91,7 +91,7 @@ public class Interactable : MonoBehaviour
 
     public void closePrompt()
     {
-        _playerInventory.updateText();
+        _playerInventory.updateUI();
         _player.canMove = true;
         _promptOpen = false;
         Destroy(_promptInstance);

@@ -8,9 +8,12 @@ public class Inventory : MonoBehaviour
     public int inventoryCapacity;
     public GameObject uiPanel;
     public Sprite itemSlotSprite;
-    public Text  inventoryText;
     public float panelWidth;        // Shortcut to calculating size from camera and canvas. In units
     public float slotSize;          // Size of each inventory slot in canvas pixels
+
+    private Sprite[]  _itemSpriteSheet;
+    //private Sprite[,] _metalSprites;
+    //private Sprite[]  _hiltSprites;
 
     private InventoryItem[] _items;
     private GameObject[]    _itemPanels;
@@ -19,6 +22,38 @@ public class Inventory : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        _itemSpriteSheet = Resources.LoadAll<Sprite>("Sprites/item_spritesheet");
+
+        InventoryItem.MetalSprites = new Sprite[4, 5]
+        {
+            {   _itemSpriteSheet[0],
+                _itemSpriteSheet[13],
+                _itemSpriteSheet[36],
+                _itemSpriteSheet[27],
+                _itemSpriteSheet[27]},
+            {   _itemSpriteSheet[1],
+                _itemSpriteSheet[14],
+                _itemSpriteSheet[37],
+                _itemSpriteSheet[28],
+                _itemSpriteSheet[28]},
+            {   _itemSpriteSheet[2],
+                _itemSpriteSheet[16],
+                _itemSpriteSheet[38],
+                _itemSpriteSheet[29],
+                _itemSpriteSheet[29]},
+            {   _itemSpriteSheet[3],
+                _itemSpriteSheet[16],
+                _itemSpriteSheet[39],
+                _itemSpriteSheet[30],
+                _itemSpriteSheet[30]}
+        };
+
+        InventoryItem.HiltSprites = new Sprite[3]
+        {
+            _itemSpriteSheet[22], _itemSpriteSheet[23], _itemSpriteSheet[26]
+        };
+
+        Debug.Log(_itemSpriteSheet.Length);
         _items = new InventoryItem[inventoryCapacity];
         _itemPanels = new GameObject[inventoryCapacity];
         _itemCount = 0;
@@ -46,10 +81,10 @@ public class Inventory : MonoBehaviour
         testItem1.itemState = ItemState.Raw;
         testItem1.metalType = MetalType.Gold;
         InventoryItem testItem2 = new InventoryItem();
-        testItem2.itemState = ItemState.Raw;
+        testItem2.itemState = ItemState.Blade;
         testItem2.metalType = MetalType.Iron;
         InventoryItem testItem3 = new InventoryItem();
-        testItem3.itemState = ItemState.Raw;
+        testItem3.itemState = ItemState.Blade;
         testItem3.metalType = MetalType.Emerald;
 
         addItem(testItem1);
@@ -68,7 +103,7 @@ public class Inventory : MonoBehaviour
             {
                 _items[i] = item;
                 _itemCount++;
-                updateText();
+                updateUI();
                 return true;
             }
         }
@@ -83,7 +118,7 @@ public class Inventory : MonoBehaviour
             InventoryItem returnItem = _items[index];
             _items[index] = null;
             _itemCount--;
-            updateText();
+            updateUI();
             return returnItem;
         }
 
@@ -126,20 +161,48 @@ public class Inventory : MonoBehaviour
         return null;
     }
 
-    public void updateText()
+    public void updateUI()
     {
-        string inventoryString = "";
+        // Fill inventory slots with proper items
         for (int i = 0; i < inventoryCapacity; i++)
         {
             if (_items[i] != null)
             {
-                inventoryString += _items[i].toString();
-            }
+                // Remove old item object from slot
+                for (int j = 0; j < _itemPanels[i].transform.childCount; j++)
+                    Destroy(_itemPanels[i].transform.GetChild(j).gameObject);
 
-            inventoryString += "\n";
+                // Recreate item object and position properlty
+                GameObject itemObject = _items[i].toGameObject();
+                itemObject.transform.parent     = _itemPanels[i].transform;
+                itemObject.transform.position   = _itemPanels[i].transform.position;
+                itemObject.transform.localScale = Vector3.one;
+            }
+        }
+    }
+    
+    /*
+    public GameObject toGameObject(InventoryItem i)
+    {
+        GameObject itemObject  = new GameObject("Item Object");  // Represents entire item
+        GameObject metalObject = new GameObject("Metal Object"); // Represents metal portion (raw metal, ingot, etc.)
+
+        metalObject.transform.parent = itemObject.transform;
+        SpriteRenderer metalSprite = metalObject.AddComponent<SpriteRenderer>();
+        metalSprite.sprite = _metalSprites[(int)i.metalType,(int)i.itemState];
+        metalSprite.sortingOrder = 2;
+
+        if (i.itemState == ItemState.Sword)
+        {
+            GameObject hiltObject = new GameObject("Hilt Object"); // Represents hilt
+
+            hiltObject.transform.parent = itemObject.transform;
+            SpriteRenderer hiltSprite = hiltObject.AddComponent<SpriteRenderer>();
+            hiltSprite.sprite = _hiltSprites[(int)i.hiltType];
+            hiltSprite.sortingOrder = 3;
         }
 
-        inventoryText.text = inventoryString;
-    }
-
+        return itemObject;
+    }*/
+    
 }
