@@ -34,7 +34,7 @@ BlendTree:
   m_Name: Blend Tree
   m_Childs:
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: b1d54f4a8dbee7f458de88f4d905c357, type: 2}
+    m_Motion: {fileID: 7400000, guid: dc7bf2380bb9846bd9ac8ff39e0d440c, type: 2}
     m_Threshold: -1
     m_Position: {x: 0, y: -1}
     m_TimeScale: 1
@@ -42,7 +42,7 @@ BlendTree:
     m_DirectBlendParameter: Horizontal
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: 834b2bfa88f31074696eda8e2b01d83d, type: 2}
+    m_Motion: {fileID: 7400000, guid: b74af1e7ed91c41fd89bbd01de24daa3, type: 2}
     m_Threshold: 1
     m_Position: {x: 0, y: 1}
     m_TimeScale: 1
@@ -50,7 +50,7 @@ BlendTree:
     m_DirectBlendParameter: Horizontal
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: 010757a07e4fb9848872def93e7c0795, type: 2}
+    m_Motion: {fileID: 7400000, guid: 996b81b461553441ea5574d3b7dfed32, type: 2}
     m_Threshold: 3
     m_Position: {x: -1, y: 0}
     m_TimeScale: 1
@@ -58,7 +58,7 @@ BlendTree:
     m_DirectBlendParameter: Horizontal
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: 6755d44d0aa418b4487f933832896784, type: 2}
+    m_Motion: {fileID: 7400000, guid: 9c536de73129e45f8a0ca23cc742edf8, type: 2}
     m_Threshold: 5
     m_Position: {x: 1, y: 0}
     m_TimeScale: 1
@@ -78,7 +78,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Mole BAD
+  m_Name: Blacksmith
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: Horizontal
@@ -158,7 +158,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 65fb47924473b094d9b6f5f7c897a540, type: 2}
+  m_Motion: {fileID: 7400000, guid: b7c2d3f6767e448b093178af8bcef326, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
