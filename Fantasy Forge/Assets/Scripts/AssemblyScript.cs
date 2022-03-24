@@ -21,6 +21,8 @@ public class AssemblyScript : MonoBehaviour
     public Sprite goldSword;
     public Sprite silverSword;
     public Sprite emeraldSword;
+    private int signal =0;
+    CustomerMovement customerMovement;
 
     // Start is called before the first frame update
     void Start()
@@ -94,5 +96,7 @@ public class AssemblyScript : MonoBehaviour
         }
         Debug.Log("Output from assembly is " + _inputItem.itemState + " " + _inputItem.metalType + " " + _inputItem.hiltType);
         GetComponent<Prompt>().promptingInteractable.closePrompt();
+        signal = 1;
+        customerMovement.complete = signal;
     }
 }

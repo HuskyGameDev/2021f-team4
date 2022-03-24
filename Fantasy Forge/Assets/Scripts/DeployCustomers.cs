@@ -10,7 +10,7 @@ public class DeployCustomers : MonoBehaviour
     public Vector2 startPos;
     private Vector2 screenBounds;
     public static int customerNum = 0;
-
+    public GameObject[] CustomerQueue = new GameObject[5];
     // Start is called before the first frame update
     void Start()
     {
@@ -25,7 +25,8 @@ public class DeployCustomers : MonoBehaviour
         {
             GameObject customer = Instantiate(customerPrefab) as GameObject;
             customer.transform.position = startPos;
-            //cust.transform.position.Set(1, 1, 1);
+              CustomerQueue[customerNum] = customer;
+            
             customerNum++;
         }
     }

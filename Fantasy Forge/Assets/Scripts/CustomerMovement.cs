@@ -14,9 +14,7 @@ public class CustomerMovement : MonoBehaviour
     private Vector2 movement;
     private Vector2 screenBounds;
     private float RandomNum = 0;
- //   public float CharacterXPosition;
-    //public float CharacterYPosition;
-  //  public float CharacterZPosition;
+    public int complete = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -59,18 +57,14 @@ public class CustomerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      //PlayerPrefs.SetFloat("MyPositionX", transform.position.x);
-      // PlayerPrefs.SetFloat("MyPositionY", transform.position.y);
-      // PlayerPrefs.SetFloat("MyPositionZ", transform.position.z);
+
       var positionX  = GameObject.Find("Blacksmith").transform.position.x;
       var positionY = GameObject.Find("Blacksmith").transform.position.y;
-
-        if (Input.GetKeyDown("e") && positionX > 1.2f && positionX < 4.3f && positionY > 4.0f)
+        if (Input.GetKeyUp("e") && positionX > 1.3f && positionX < 3.0f && positionY > 2.2f && complete == 1)
         {
-            print("e key was pressed");
-            print(positionX);
             movement.x = 1;
         }
+        
 
         //Checking to see if customer is to the right of the screen.
         if (transform.position.x > screenBounds.x * -.45)
@@ -94,6 +88,7 @@ public class CustomerMovement : MonoBehaviour
     // Detects if the customer encounters the trigger for the front desk or another customer
     private void OnTriggerEnter2D(Collider2D collision)
     {
+
         if (collision.gameObject.name == "Customer(Clone)")
         {
             movement.x = 0;
