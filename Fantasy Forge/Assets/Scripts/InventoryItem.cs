@@ -8,7 +8,8 @@ public enum ItemState
     Ingot,  // After furnace, before hammer
     Shape,  // After hammer, before grindstone
     Blade,  // After grindstone, before contruction
-    Sword   // After construction, final product
+    Sword,  // After construction, final product
+    None    // Used for basket/no requirement   
 }
 
 public enum MetalType

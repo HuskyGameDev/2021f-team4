@@ -34,9 +34,11 @@ public class Interactable : MonoBehaviour
                 // if (_player.movementEnabled == 1 || _promptOpen)
                 //{
                 // Toggle prompt openness, player movement, etc.
-                InventoryItem inputItem = _playerInventory.getItem(requiredItem);
+                InventoryItem inputItem = null;
+                if (requiredItem != ItemState.None)
+                    inputItem = _playerInventory.getItem(requiredItem);
 
-                if (inputItem != null)
+                if (inputItem != null || requiredItem == ItemState.None)
                 { 
                     if (!_promptOpen)
                     {
@@ -84,6 +86,7 @@ public class Interactable : MonoBehaviour
         _promptInstance = Instantiate(promptPrefab);
         _promptInstance.GetComponent<Prompt>().promptingInteractable = this;
         _promptInstance.GetComponent<Prompt>().inputItem = inputItem;
+        _promptInstance.GetComponent<Prompt>().playerInventory = _playerInventory;
 
         // Open prompt 5 units above scene
         _promptInstance.transform.position = Vector3.back * 5;

@@ -89,7 +89,7 @@ public class Inventory : MonoBehaviour
 
         addItem(testItem1);
         addItem(testItem2);
-        addItem(testItem3);
+        // addItem(testItem3);
     }
 
     public bool addItem(InventoryItem item)
