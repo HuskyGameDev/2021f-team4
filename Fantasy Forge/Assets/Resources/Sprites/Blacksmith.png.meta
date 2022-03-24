@@ -214,12 +214,12 @@ TextureImporter:
       name: Blacksmith_0
       rect:
         serializedVersion: 2
-        x: 10
+        x: 0
         y: 816
-        width: 175
-        height: 263
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 204
+        height: 272
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -235,12 +235,12 @@ TextureImporter:
       name: Blacksmith_1
       rect:
         serializedVersion: 2
-        x: 225
-        y: 825
-        width: 158
-        height: 258
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 204
+        y: 816
+        width: 204
+        height: 272
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -256,12 +256,12 @@ TextureImporter:
       name: Blacksmith_2
       rect:
         serializedVersion: 2
-        x: 417
-        y: 835
-        width: 169
-        height: 251
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 408
+        y: 816
+        width: 204
+        height: 272
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -277,12 +277,12 @@ TextureImporter:
       name: Blacksmith_3
       rect:
         serializedVersion: 2
-        x: 621
-        y: 835
-        width: 169
-        height: 251
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 612
+        y: 816
+        width: 204
+        height: 272
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -298,12 +298,12 @@ TextureImporter:
       name: Blacksmith_4
       rect:
         serializedVersion: 2
-        x: 838
-        y: 825
-        width: 151
-        height: 257
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 816
+        y: 816
+        width: 204
+        height: 272
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -319,12 +319,12 @@ TextureImporter:
       name: Blacksmith_5
       rect:
         serializedVersion: 2
-        x: 1030
+        x: 1020
         y: 816
-        width: 175
-        height: 269
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 204
+        height: 272
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -340,12 +340,12 @@ TextureImporter:
       name: Blacksmith_6
       rect:
         serializedVersion: 2
-        x: 1249
-        y: 826
-        width: 151
-        height: 258
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1224
+        y: 816
+        width: 204
+        height: 272
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -361,12 +361,12 @@ TextureImporter:
       name: Blacksmith_7
       rect:
         serializedVersion: 2
-        x: 1446
-        y: 836
-        width: 173
-        height: 252
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1428
+        y: 816
+        width: 204
+        height: 272
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -382,12 +382,12 @@ TextureImporter:
       name: Blacksmith_8
       rect:
         serializedVersion: 2
-        x: 1650
-        y: 836
-        width: 173
-        height: 252
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1632
+        y: 816
+        width: 204
+        height: 272
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -403,12 +403,12 @@ TextureImporter:
       name: Blacksmith_9
       rect:
         serializedVersion: 2
-        x: 1859
-        y: 832
-        width: 153
-        height: 254
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1836
+        y: 816
+        width: 204
+        height: 272
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -424,12 +424,12 @@ TextureImporter:
       name: Blacksmith_10
       rect:
         serializedVersion: 2
-        x: 15
-        y: 552
-        width: 151
-        height: 254
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 0
+        y: 544
+        width: 204
+        height: 272
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -445,12 +445,12 @@ TextureImporter:
       name: Blacksmith_11
       rect:
         serializedVersion: 2
-        x: 228
-        y: 553
-        width: 164
-        height: 255
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 204
+        y: 544
+        width: 204
+        height: 272
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -466,12 +466,12 @@ TextureImporter:
       name: Blacksmith_12
       rect:
         serializedVersion: 2
-        x: 421
-        y: 550
-        width: 181
-        height: 260
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 408
+        y: 544
+        width: 204
+        height: 272
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -487,12 +487,12 @@ TextureImporter:
       name: Blacksmith_13
       rect:
         serializedVersion: 2
-        x: 625
-        y: 550
-        width: 181
-        height: 260
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 612
+        y: 544
+        width: 204
+        height: 272
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -508,12 +508,12 @@ TextureImporter:
       name: Blacksmith_14
       rect:
         serializedVersion: 2
-        x: 838
-        y: 552
-        width: 159
-        height: 257
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 816
+        y: 544
+        width: 204
+        height: 272
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -529,12 +529,12 @@ TextureImporter:
       name: Blacksmith_15
       rect:
         serializedVersion: 2
-        x: 1037
-        y: 549
-        width: 150
-        height: 256
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1020
+        y: 544
+        width: 204
+        height: 272
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -550,12 +550,12 @@ TextureImporter:
       name: Blacksmith_16
       rect:
         serializedVersion: 2
-        x: 1236
-        y: 553
-        width: 173
-        height: 255
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1224
+        y: 544
+        width: 204
+        height: 272
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -571,12 +571,12 @@ TextureImporter:
       name: Blacksmith_17
       rect:
         serializedVersion: 2
-        x: 1436
-        y: 547
-        width: 185
-        height: 263
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1428
+        y: 544
+        width: 204
+        height: 272
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -592,12 +592,12 @@ TextureImporter:
       name: Blacksmith_18
       rect:
         serializedVersion: 2
-        x: 1640
-        y: 547
-        width: 185
-        height: 263
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1632
+        y: 544
+        width: 204
+        height: 272
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -613,12 +613,12 @@ TextureImporter:
       name: Blacksmith_19
       rect:
         serializedVersion: 2
-        x: 1851
-        y: 548
-        width: 159
-        height: 262
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1836
+        y: 544
+        width: 204
+        height: 272
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -634,12 +634,12 @@ TextureImporter:
       name: Blacksmith_20
       rect:
         serializedVersion: 2
-        x: 46
-        y: 282
-        width: 151
-        height: 254
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 0
+        y: 272
+        width: 204
+        height: 272
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -655,12 +655,12 @@ TextureImporter:
       name: Blacksmith_21
       rect:
         serializedVersion: 2
-        x: 232
-        y: 284
-        width: 173
-        height: 255
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 204
+        y: 272
+        width: 204
+        height: 272
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -676,12 +676,12 @@ TextureImporter:
       name: Blacksmith_22
       rect:
         serializedVersion: 2
-        x: 425
-        y: 278
-        width: 185
-        height: 263
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 408
+        y: 272
+        width: 204
+        height: 272
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -697,12 +697,12 @@ TextureImporter:
       name: Blacksmith_23
       rect:
         serializedVersion: 2
-        x: 629
-        y: 278
-        width: 185
-        height: 263
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 612
+        y: 272
+        width: 204
+        height: 272
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -718,12 +718,12 @@ TextureImporter:
       name: Blacksmith_24
       rect:
         serializedVersion: 2
-        x: 849
-        y: 278
-        width: 159
-        height: 262
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 816
+        y: 272
+        width: 204
+        height: 272
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -739,12 +739,12 @@ TextureImporter:
       name: Blacksmith_25
       rect:
         serializedVersion: 2
-        x: 1062
-        y: 278
-        width: 150
-        height: 256
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1020
+        y: 272
+        width: 204
+        height: 272
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -760,12 +760,12 @@ TextureImporter:
       name: Blacksmith_26
       rect:
         serializedVersion: 2
-        x: 1246
-        y: 284
-        width: 164
-        height: 255
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1224
+        y: 272
+        width: 204
+        height: 272
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -781,12 +781,12 @@ TextureImporter:
       name: Blacksmith_27
       rect:
         serializedVersion: 2
-        x: 1444
-        y: 281
-        width: 181
-        height: 260
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1428
+        y: 272
+        width: 204
+        height: 272
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -802,12 +802,12 @@ TextureImporter:
       name: Blacksmith_28
       rect:
         serializedVersion: 2
-        x: 1648
-        y: 281
-        width: 181
-        height: 260
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1632
+        y: 272
+        width: 204
+        height: 272
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -823,12 +823,12 @@ TextureImporter:
       name: Blacksmith_29
       rect:
         serializedVersion: 2
-        x: 1864
-        y: 283
-        width: 159
-        height: 257
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1836
+        y: 272
+        width: 204
+        height: 272
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -844,12 +844,12 @@ TextureImporter:
       name: Blacksmith_30
       rect:
         serializedVersion: 2
-        x: 9
+        x: 0
         y: 0
-        width: 176
-        height: 263
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 204
+        height: 272
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -865,12 +865,12 @@ TextureImporter:
       name: Blacksmith_31
       rect:
         serializedVersion: 2
-        x: 225
+        x: 204
         y: 0
-        width: 158
-        height: 267
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 204
+        height: 272
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -886,12 +886,12 @@ TextureImporter:
       name: Blacksmith_32
       rect:
         serializedVersion: 2
-        x: 423
+        x: 408
         y: 0
-        width: 168
+        width: 204
         height: 272
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -907,12 +907,12 @@ TextureImporter:
       name: Blacksmith_33
       rect:
         serializedVersion: 2
-        x: 627
+        x: 612
         y: 0
-        width: 168
+        width: 204
         height: 272
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -928,12 +928,12 @@ TextureImporter:
       name: Blacksmith_34
       rect:
         serializedVersion: 2
-        x: 837
+        x: 816
         y: 0
-        width: 158
-        height: 267
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 204
+        height: 272
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -949,12 +949,12 @@ TextureImporter:
       name: Blacksmith_35
       rect:
         serializedVersion: 2
-        x: 1032
+        x: 1020
         y: 0
-        width: 173
-        height: 263
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 204
+        height: 272
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -970,12 +970,12 @@ TextureImporter:
       name: Blacksmith_36
       rect:
         serializedVersion: 2
-        x: 1245
+        x: 1224
         y: 0
-        width: 158
-        height: 267
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 204
+        height: 272
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -991,12 +991,12 @@ TextureImporter:
       name: Blacksmith_37
       rect:
         serializedVersion: 2
-        x: 1442
+        x: 1428
         y: 0
-        width: 168
+        width: 204
         height: 272
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1012,12 +1012,12 @@ TextureImporter:
       name: Blacksmith_38
       rect:
         serializedVersion: 2
-        x: 1646
+        x: 1632
         y: 0
-        width: 168
+        width: 204
         height: 272
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1033,12 +1033,12 @@ TextureImporter:
       name: Blacksmith_39
       rect:
         serializedVersion: 2
-        x: 1857
+        x: 1836
         y: 0
-        width: 158
-        height: 267
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 204
+        height: 272
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

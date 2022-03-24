@@ -12,8 +12,6 @@ public class Inventory : MonoBehaviour
     public float slotSize;          // Size of each inventory slot in canvas pixels
 
     private Sprite[]  _itemSpriteSheet;
-    //private Sprite[,] _metalSprites;
-    //private Sprite[]  _hiltSprites;
 
     private InventoryItem[] _items;
     private GameObject[]    _itemPanels;
@@ -53,7 +51,6 @@ public class Inventory : MonoBehaviour
             _itemSpriteSheet[22], _itemSpriteSheet[23], _itemSpriteSheet[26]
         };
 
-        Debug.Log(_itemSpriteSheet.Length);
         _items = new InventoryItem[inventoryCapacity];
         _itemPanels = new GameObject[inventoryCapacity];
         _itemCount = 0;
@@ -76,6 +73,7 @@ public class Inventory : MonoBehaviour
 
         }
 
+        /*
         // DEBUG
         InventoryItem testItem1 = new InventoryItem();
         testItem1.itemState = ItemState.Raw;
@@ -89,7 +87,8 @@ public class Inventory : MonoBehaviour
 
         addItem(testItem1);
         addItem(testItem2);
-        // addItem(testItem3);
+        addItem(testItem3);
+        */
     }
 
     public bool addItem(InventoryItem item)
@@ -181,6 +180,11 @@ public class Inventory : MonoBehaviour
         }
     }
     
+    public bool isFull()
+    {
+        return _itemCount == inventoryCapacity;
+    }
+
     /*
     public GameObject toGameObject(InventoryItem i)
     {

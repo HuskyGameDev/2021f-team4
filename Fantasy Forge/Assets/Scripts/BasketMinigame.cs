@@ -4,16 +4,26 @@ using UnityEngine;
 
 public class BasketMinigame : MonoBehaviour
 {
-    public SpriteRenderer basketSprite;
-    public MetalType metalType;
+    public  SpriteRenderer basketSprite;
+
+    private MetalType      _metalType;
+
     void Start()
     {
-        Inventory playerInventory = GetComponentInParent<Prompt>().playerInventory;
-        InventoryItem testItem3 = new InventoryItem();
-        testItem3.itemState = ItemState.Raw;
-        testItem3.metalType = metalType;
-        playerInventory.addItem(testItem3);
-        GetComponentInParent<Prompt>().promptingInteractable.closePrompt();
+        Inventory    playerInventory       = GetComponentInParent<Prompt>().playerInventory;
+        Interactable promptingInteractable = GetComponentInParent<Prompt>().promptingInteractable;
+
+        if (!playerInventory.isFull())
+        {
+            _metalType = promptingInteractable.gameObject.GetComponent<Basket>().metalType;
+
+            InventoryItem newItem = new InventoryItem();
+            newItem.itemState = ItemState.Raw;
+            newItem.metalType = _metalType;
+            playerInventory.addItem(newItem);
+        }
+
+        promptingInteractable.closePrompt();
 
     }
 

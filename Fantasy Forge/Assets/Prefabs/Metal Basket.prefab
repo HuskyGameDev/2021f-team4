@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 11192544338316499}
   - component: {fileID: 2060395667113603758}
   - component: {fileID: 4488759738738375880}
+  - component: {fileID: 8771700735616838190}
   m_Layer: 0
   m_Name: Metal Basket
   m_TagString: Untagged
@@ -99,8 +100,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.05, y: -0.85}
-  m_Size: {x: 1.25, y: 0.25}
+  m_Offset: {x: 0.05, y: 0.1}
+  m_Size: {x: 0.8, y: 0.15}
   m_Direction: 1
 --- !u!70 &2060395667113603758
 CapsuleCollider2D:
@@ -115,8 +116,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 1
   m_UsedByComposite: 0
-  m_Offset: {x: 0.05, y: -0.85}
-  m_Size: {x: 3, y: 1.5}
+  m_Offset: {x: 0.05, y: 0.1}
+  m_Size: {x: 2.5, y: 1.25}
   m_Direction: 1
 --- !u!114 &4488759738738375880
 MonoBehaviour:
@@ -134,3 +135,21 @@ MonoBehaviour:
   promptPrefab: {fileID: 3827213862803970829, guid: 93a497771233dd64781671907b4b92c8,
     type: 3}
   requiredItem: 5
+--- !u!114 &8771700735616838190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 83837248555128847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cd9f601b49788845a78fe7eeda8f598, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  metalType: 0
+  basketSpriteSheet:
+  - {fileID: 6684692585189513257, guid: 869a58d679810b148a71b1eba17d4d9a, type: 3}
+  - {fileID: 2177814490469408886, guid: 869a58d679810b148a71b1eba17d4d9a, type: 3}
+  - {fileID: 3719196625496017395, guid: 869a58d679810b148a71b1eba17d4d9a, type: 3}
+  - {fileID: -2858664914452532848, guid: 869a58d679810b148a71b1eba17d4d9a, type: 3}
