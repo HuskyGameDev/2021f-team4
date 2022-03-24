@@ -13,7 +13,9 @@ public class CharacterMovement : MonoBehaviour
 
     public Vector2 movement;
 
-    public bool canMove; // using in the TextBoxManager script to stop player from moving while interacting
+    public bool canMove; 
+    public CustomerMovement customerMovement;
+    // using in the TextBoxManager script to stop player from moving while interacting
     /*public float CharacterXPosition;
     public float CharacterYPosition;
     public float CharacterZPosition;
@@ -43,6 +45,15 @@ public class CharacterMovement : MonoBehaviour
         animator.SetFloat("Vertical", movement.y);
         animator.SetFloat("Speed", movement.sqrMagnitude);
         print(GameObject.Find("Blacksmith").transform.position.y);
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {    
+
+     print(collision.gameObject.name);
+        
+    if(collision.gameObject.name == "Counter"){
+        
+        }
     }
 
     private void FixedUpdate()

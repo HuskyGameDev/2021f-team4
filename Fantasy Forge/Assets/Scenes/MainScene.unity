@@ -225,6 +225,17 @@ MonoBehaviour:
   customerPrefab: {fileID: 8094080986353900572, guid: 266ba30746d7a4c0ea5a51d39f89931c,
     type: 3}
   respawnTime: 5
+<<<<<<< Updated upstream
+=======
+  startPos: {x: -4.5, y: 4}
+  CustomerQueue:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  customerMovement: {fileID: 0}
+>>>>>>> Stashed changes
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -1386,6 +1397,7 @@ MonoBehaviour:
   animator: {fileID: 1698476374}
   movement: {x: 0, y: 0}
   canMove: 1
+  customerMovement: {fileID: 0}
 --- !u!50 &1698476378
 Rigidbody2D:
   serializedVersion: 4
