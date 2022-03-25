@@ -20,35 +20,42 @@ public class Inventory : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _itemSpriteSheet = Resources.LoadAll<Sprite>("Sprites/item_spritesheet");
+        _itemSpriteSheet = Resources.LoadAll<Sprite>("Sprites/ItemSpritesheet");
 
-        InventoryItem.MetalSprites = new Sprite[4, 5]
+        InventoryItem.MetalSprites = new Sprite[4, 4]
         {
+            {   _itemSpriteSheet[14],
+                _itemSpriteSheet[15],
+                _itemSpriteSheet[16],
+                _itemSpriteSheet[17]},
+            {   _itemSpriteSheet[7],
+                _itemSpriteSheet[8],
+                _itemSpriteSheet[9],
+                _itemSpriteSheet[10]},
+            {   _itemSpriteSheet[21],
+                _itemSpriteSheet[22],
+                _itemSpriteSheet[23],
+                _itemSpriteSheet[24]},
             {   _itemSpriteSheet[0],
-                _itemSpriteSheet[13],
-                _itemSpriteSheet[36],
-                _itemSpriteSheet[27],
-                _itemSpriteSheet[27]},
-            {   _itemSpriteSheet[1],
-                _itemSpriteSheet[14],
-                _itemSpriteSheet[37],
-                _itemSpriteSheet[28],
-                _itemSpriteSheet[28]},
-            {   _itemSpriteSheet[2],
-                _itemSpriteSheet[16],
-                _itemSpriteSheet[38],
-                _itemSpriteSheet[29],
-                _itemSpriteSheet[29]},
-            {   _itemSpriteSheet[3],
-                _itemSpriteSheet[16],
-                _itemSpriteSheet[39],
-                _itemSpriteSheet[30],
-                _itemSpriteSheet[30]}
+                _itemSpriteSheet[1],
+                _itemSpriteSheet[2],
+                _itemSpriteSheet[3]}
         };
 
-        InventoryItem.HiltSprites = new Sprite[3]
+        InventoryItem.HiltSprites = new Sprite[4,3]
         {
-            _itemSpriteSheet[22], _itemSpriteSheet[23], _itemSpriteSheet[26]
+            {   _itemSpriteSheet[18],
+                _itemSpriteSheet[19],
+                _itemSpriteSheet[20]},
+            {   _itemSpriteSheet[11],
+                _itemSpriteSheet[12],
+                _itemSpriteSheet[13]},
+            {   _itemSpriteSheet[25],
+                _itemSpriteSheet[26],
+                _itemSpriteSheet[27]},
+            {   _itemSpriteSheet[4],
+                _itemSpriteSheet[5],
+                _itemSpriteSheet[6]}
         };
 
         _items = new InventoryItem[inventoryCapacity];
@@ -117,6 +124,11 @@ public class Inventory : MonoBehaviour
             InventoryItem returnItem = _items[index];
             _items[index] = null;
             _itemCount--;
+
+            // Remove old item object from slot
+            for (int j = 0; j < _itemPanels[index].transform.childCount; j++)
+                Destroy(_itemPanels[index].transform.GetChild(j).gameObject);
+
             updateUI();
             return returnItem;
         }

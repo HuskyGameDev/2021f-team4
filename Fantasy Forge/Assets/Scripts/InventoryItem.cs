@@ -42,28 +42,25 @@ public class InventoryItem
     public HiltType hiltType;     //Only applicable after assembly
 
     public static Sprite[,] MetalSprites;
-    public static Sprite[]  HiltSprites;
+    public static Sprite[,] HiltSprites;
 
 
     public GameObject toGameObject()
     {
         GameObject itemObject = new GameObject("Item Object");  // Represents entire item
-        GameObject metalObject = new GameObject("Metal Object"); // Represents metal portion (raw metal, ingot, etc.)
-
-        metalObject.transform.parent = itemObject.transform;
-        SpriteRenderer metalSprite = metalObject.AddComponent<SpriteRenderer>();
-        metalSprite.sprite = MetalSprites[(int)metalType, (int)itemState];
-        metalSprite.sortingOrder = 2;
-
-        if (itemState == ItemState.Sword)
+        
+        SpriteRenderer itemSprite = itemObject.AddComponent<SpriteRenderer>();
+        
+        if(itemState == ItemState.Sword)
         {
-            GameObject hiltObject = new GameObject("Hilt Object"); // Represents hilt
-
-            hiltObject.transform.parent = itemObject.transform;
-            SpriteRenderer hiltSprite = hiltObject.AddComponent<SpriteRenderer>();
-            hiltSprite.sprite = HiltSprites[(int)hiltType];
-            hiltSprite.sortingOrder = 3;
+            itemSprite.sprite = HiltSprites[(int)metalType, (int)hiltType];
         }
+        else
+        {
+            itemSprite.sprite = MetalSprites[(int)metalType, (int)itemState];
+        }
+        
+        itemSprite.sortingOrder = 2;
 
         return itemObject;
     }
@@ -74,6 +71,10 @@ public class InventoryItem
         if (itemState == ItemState.Raw)
         {
             itemString = itemState.ToString() + " " + metalType.ToString();
+        }
+        else if(itemState == ItemState.Sword)
+        {
+            itemString = metalType.ToString() + " " + itemState.ToString() + " with " + hiltType.ToString();
         }
         else
         {

@@ -7,12 +7,16 @@ public class AssemblyScript : MonoBehaviour
 {
 
     private Image hilt;
+    private Image ghost1;
+    private Image ghost2;
     private Image sword;
     private static Sprite[] hilts;
     public Sprite hilt1;
     public Sprite hilt2;
     public Sprite hilt3;
     public GameObject hiltObject;
+    public GameObject phantom1;
+    public GameObject phantom2;
     public GameObject swordObject;
     private int index = 0;
 
@@ -21,13 +25,15 @@ public class AssemblyScript : MonoBehaviour
     public Sprite goldSword;
     public Sprite silverSword;
     public Sprite emeraldSword;
-    private int signal =0;
-    CustomerMovement customerMovement;
+    //private int signal = 0;  //Line caused NullReference
+    //CustomerMovement customerMovement; //Line caused NullReference
 
     // Start is called before the first frame update
     void Start()
     {
         hilt = hiltObject.GetComponent<Image>();
+        ghost1 = phantom1.GetComponent<Image>(); 
+        ghost2 = phantom2.GetComponent<Image>();
         sword = swordObject.GetComponent<Image>();
         hilts = new Sprite[3] {hilt1, hilt2, hilt3};
         hilt.sprite = hilts[0];
@@ -67,6 +73,22 @@ public class AssemblyScript : MonoBehaviour
             index = 2;
         }
         hilt.sprite = hilts[index];
+        
+        if(index == 0)
+        {
+            ghost1.sprite = hilts[2];
+            ghost2.sprite = hilts[index + 1];
+        }
+        else if(index == 2)
+        {
+            ghost1.sprite = hilts[index - 1];
+            ghost2.sprite = hilts[0];
+        }
+        else
+        {
+            ghost1.sprite = hilts[index - 1];
+            ghost2.sprite = hilts[index + 1];
+        }
     }
 
     public void rightButton()
@@ -77,6 +99,22 @@ public class AssemblyScript : MonoBehaviour
             index = 0;
         }
         hilt.sprite = hilts[index];
+
+        if (index == 0)
+        {
+            ghost1.sprite = hilts[2];
+            ghost2.sprite = hilts[index + 1];
+        }
+        else if (index == 2)
+        {
+            ghost1.sprite = hilts[index - 1];
+            ghost2.sprite = hilts[0];
+        }
+        else
+        {
+            ghost1.sprite = hilts[index - 1];
+            ghost2.sprite = hilts[index + 1];
+        }
     }
 
     public void choose()
@@ -96,7 +134,7 @@ public class AssemblyScript : MonoBehaviour
         }
         Debug.Log("Output from assembly is " + _inputItem.itemState + " " + _inputItem.metalType + " " + _inputItem.hiltType);
         GetComponent<Prompt>().promptingInteractable.closePrompt();
-        signal = 1;
-        customerMovement.complete = signal;
+        //signal = 1;  //Line caused NullReference
+        //customerMovement.complete = signal;  //Line Caused NullReference
     }
 }
