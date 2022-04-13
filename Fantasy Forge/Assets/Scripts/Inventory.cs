@@ -96,18 +96,17 @@ public class Inventory : MonoBehaviour
         InventoryItem testItem2 = new InventoryItem();
         testItem2.itemState = ItemState.Blade;
         testItem2.metalType = MetalType.Iron;
-        */
+        
         InventoryItem testItem3 = new InventoryItem();
         testItem3.itemState = ItemState.Blade;
         testItem3.metalType = MetalType.Emerald;
         
-        /*
+       
         addItem(testItem1);
         addItem(testItem2);
-        
-        */
         addItem(testItem3);
-        
+        */
+
 
         updateUI();
     }
