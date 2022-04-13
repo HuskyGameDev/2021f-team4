@@ -10,7 +10,7 @@ public class DeployCustomers : MonoBehaviour
     public Vector2 startPos;
     private Vector2 screenBounds;
     public static int customerNum = 0;
-    public GameObject[] CustomerQueue = new GameObject[5];
+    public GameObject[] CustomerQueue = new GameObject[4];
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +21,7 @@ public class DeployCustomers : MonoBehaviour
     // Method to spawn the customer on screen in a specific location.
     private void spawnCustomer()
     {
-        if (customerNum < 5)
+        if (customerNum < 4)
         {
             GameObject customer = Instantiate(customerPrefab) as GameObject;
             customer.transform.position = startPos;
