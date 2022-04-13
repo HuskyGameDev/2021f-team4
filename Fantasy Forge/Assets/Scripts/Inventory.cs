@@ -96,14 +96,18 @@ public class Inventory : MonoBehaviour
         InventoryItem testItem2 = new InventoryItem();
         testItem2.itemState = ItemState.Blade;
         testItem2.metalType = MetalType.Iron;
+        */
         InventoryItem testItem3 = new InventoryItem();
         testItem3.itemState = ItemState.Blade;
         testItem3.metalType = MetalType.Emerald;
-
+        
+        /*
         addItem(testItem1);
         addItem(testItem2);
-        addItem(testItem3);
+        
         */
+        addItem(testItem3);
+        
 
         updateUI();
     }
@@ -126,7 +130,6 @@ public class Inventory : MonoBehaviour
                 if (_cursorIndex >= inventoryCapacity)
                     _cursorIndex = 0;
             }
-            Debug.Log("Cursor Index: " + _cursorIndex);
             updateUI();
             StartCoroutine("ScrollCooldown");
         }
@@ -231,7 +234,7 @@ public class Inventory : MonoBehaviour
             if (_items[i] != null)
             {
                 GameObject itemObject = _items[i].toGameObject();
-                itemObject.transform.parent     = _itemPanels[i].transform;
+                itemObject.transform.SetParent(_itemPanels[i].transform);
                 itemObject.transform.position   = _itemPanels[i].transform.position;
                 itemObject.transform.localScale = Vector3.one;
             }
@@ -240,7 +243,7 @@ public class Inventory : MonoBehaviour
             if (i == _cursorIndex)
             {
                 GameObject cursorObject = Instantiate(cursorPrefab);
-                cursorObject.transform.parent = _itemPanels[i].transform;
+                cursorObject.transform.SetParent(_itemPanels[i].transform);
                 cursorObject.transform.position = _itemPanels[i].transform.position;
                 cursorObject.transform.localScale = Vector3.one * 1.25f;
             }

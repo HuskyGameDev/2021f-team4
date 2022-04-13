@@ -53,7 +53,6 @@ public class Interactable : MonoBehaviour
                 {
                     Debug.Log("Missing required " + requiredItem + " item!");
                 }
-                
             }
         }
     }

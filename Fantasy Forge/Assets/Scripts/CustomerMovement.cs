@@ -15,6 +15,7 @@ public class CustomerMovement : MonoBehaviour
     private Vector2 screenBounds;
     private float RandomNum = 0;
     public int complete = 0;
+    public InventoryItem desiredItem;
 
     // Start is called before the first frame update
     void Start()
@@ -30,6 +31,15 @@ public class CustomerMovement : MonoBehaviour
 
         //Adding screenbound so customer disappears after leaving the screen.
         screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.x, Camera.main.transform.position.z));
+
+        // Randomly generate desired item
+        desiredItem = new InventoryItem();
+        desiredItem.itemState = ItemState.Sword;
+        desiredItem.metalType = (MetalType)Random.Range(0, 3.99f);
+        desiredItem.hiltType = (HiltType)Random.Range(0, 2.99f);
+        Debug.Log("I want " + desiredItem.toString()) ;
+
+        // Visualize this!
     }
 
     // The starting behavior of customers

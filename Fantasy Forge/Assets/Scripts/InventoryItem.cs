@@ -83,4 +83,11 @@ public class InventoryItem
 
         return itemString;
     }
+
+    public bool Equals(InventoryItem other)
+    {
+        return itemState == other.itemState &&
+               metalType == other.metalType &&
+               hiltType == other.hiltType;
+    }
 }
