@@ -2670,9 +2670,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventoryCapacity: 3
   uiPanel: {fileID: 1219882129}
+  cursorPrefab: {fileID: 2743641625282406771, guid: 7822133817acf42469b8f934256d7d8d,
+    type: 3}
   itemSlotSprite: {fileID: 21300000, guid: 1cb79aacabdcada43ba075251fedcc68, type: 3}
   panelWidth: 10
   slotSize: 75
+  scrollCooldownTime: 0.05
 --- !u!1 &1720879163
 GameObject:
   m_ObjectHideFlags: 0

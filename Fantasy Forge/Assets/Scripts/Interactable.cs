@@ -36,9 +36,9 @@ public class Interactable : MonoBehaviour
                 // Toggle prompt openness, player movement, etc.
                 InventoryItem inputItem = null;
                 if (requiredItem != ItemState.None)
-                    inputItem = _playerInventory.getItem(requiredItem);
+                    inputItem = _playerInventory.getHeldItem();
 
-                if (inputItem != null || requiredItem == ItemState.None)
+                if ((inputItem != null && inputItem.itemState == requiredItem) || requiredItem == ItemState.None)
                 { 
                     if (!_promptOpen)
                     {

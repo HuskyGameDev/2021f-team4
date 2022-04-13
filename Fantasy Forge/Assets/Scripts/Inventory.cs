@@ -7,15 +7,20 @@ public class Inventory : MonoBehaviour
 {
     public int inventoryCapacity;
     public GameObject uiPanel;
+    public GameObject cursorPrefab;
     public Sprite itemSlotSprite;
-    public float panelWidth;        // Shortcut to calculating size from camera and canvas. In units
-    public float slotSize;          // Size of each inventory slot in canvas pixels
-
+    public float panelWidth;         // Shortcut to calculating size from camera and canvas. In units
+    public float slotSize;           // Size of each inventory slot in canvas pixels
+    public float scrollCooldownTime;
+     
     private Sprite[]  _itemSpriteSheet;
 
     private InventoryItem[] _items;
     private GameObject[]    _itemPanels;
     private int _itemCount;
+    private int _cursorIndex;  // Cursor/selected/held inventory item
+    private bool _scrollReady; // Cursor can be moved
+    private CharacterMovement _player;
 
     // Start is called before the first frame update
     void Start()
@@ -61,6 +66,9 @@ public class Inventory : MonoBehaviour
         _items = new InventoryItem[inventoryCapacity];
         _itemPanels = new GameObject[inventoryCapacity];
         _itemCount = 0;
+        _cursorIndex = 0;
+        _scrollReady = true;
+        _player = GetComponent<CharacterMovement>();
 
         float panelSpacing = panelWidth / (inventoryCapacity + 1);
         int x = 0;
@@ -96,6 +104,39 @@ public class Inventory : MonoBehaviour
         addItem(testItem2);
         addItem(testItem3);
         */
+
+        updateUI();
+    }
+
+    private void Update()
+    {
+        float scroll = Input.GetAxis("Mouse ScrollWheel");
+
+        if (scroll != 0 && _scrollReady && _player.canMove)
+        {
+            if (scroll < 0)
+            {
+                _cursorIndex--;
+                if (_cursorIndex < 0)
+                    _cursorIndex = inventoryCapacity - 1;
+            }
+            else
+            {
+                _cursorIndex++;
+                if (_cursorIndex >= inventoryCapacity)
+                    _cursorIndex = 0;
+            }
+            Debug.Log("Cursor Index: " + _cursorIndex);
+            updateUI();
+            StartCoroutine("ScrollCooldown");
+        }
+    }
+
+    IEnumerator ScrollCooldown()
+    {
+        _scrollReady = false;
+        yield return new WaitForSeconds(scrollCooldownTime);
+        _scrollReady = true;
     }
 
     public bool addItem(InventoryItem item)
@@ -172,22 +213,36 @@ public class Inventory : MonoBehaviour
         return null;
     }
 
+    public InventoryItem getHeldItem()
+    {
+        return _items[_cursorIndex];
+    }
+
     public void updateUI()
     {
         // Fill inventory slots with proper items
         for (int i = 0; i < inventoryCapacity; i++)
         {
+            // Remove old item object from slot
+            for (int j = 0; j < _itemPanels[i].transform.childCount; j++)
+                Destroy(_itemPanels[i].transform.GetChild(j).gameObject);
+
+            // Add item object
             if (_items[i] != null)
             {
-                // Remove old item object from slot
-                for (int j = 0; j < _itemPanels[i].transform.childCount; j++)
-                    Destroy(_itemPanels[i].transform.GetChild(j).gameObject);
-
-                // Recreate item object and position properlty
                 GameObject itemObject = _items[i].toGameObject();
                 itemObject.transform.parent     = _itemPanels[i].transform;
                 itemObject.transform.position   = _itemPanels[i].transform.position;
                 itemObject.transform.localScale = Vector3.one;
+            }
+
+            // Add cursor object at correct position
+            if (i == _cursorIndex)
+            {
+                GameObject cursorObject = Instantiate(cursorPrefab);
+                cursorObject.transform.parent = _itemPanels[i].transform;
+                cursorObject.transform.position = _itemPanels[i].transform.position;
+                cursorObject.transform.localScale = Vector3.one * 1.25f;
             }
         }
     }
