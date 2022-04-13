@@ -11,11 +11,13 @@ public class CustomerMovement : MonoBehaviour
     private float moveSpeed = 4f; //Customer speed
     public Rigidbody2D customerRB;
     public Animator animator; //Allows for animations of customer
-    private Vector2 movement;
+    public Vector2 movement;
     private Vector2 screenBounds;
     private float RandomNum = 0;
     public int complete = 0;
     public InventoryItem desiredItem;
+    private GameObject _desiredObject;
+    public bool inFront;
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +27,7 @@ public class CustomerMovement : MonoBehaviour
        
         //Hiding customer before it appears
         gameObject.GetComponent<Renderer>().enabled = false;
+        inFront = false;
 
         //Allows for a wait time to be implemented(for patience)
         StartCoroutine(appear());
@@ -33,13 +36,13 @@ public class CustomerMovement : MonoBehaviour
         screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.x, Camera.main.transform.position.z));
 
         // Randomly generate desired item
+        _desiredObject = null;
         desiredItem = new InventoryItem();
         desiredItem.itemState = ItemState.Sword;
         desiredItem.metalType = (MetalType)Random.Range(0, 3.99f);
         desiredItem.hiltType = (HiltType)Random.Range(0, 2.99f);
         Debug.Log("I want " + desiredItem.toString()) ;
 
-        // Visualize this!
     }
 
     // The starting behavior of customers
@@ -61,7 +64,7 @@ public class CustomerMovement : MonoBehaviour
         yield return new WaitForSeconds(RandomNum);
 
         //Customer leaving after losing patience
-        this.movement.x = 1;
+        dismiss();
     }
 
     // Update is called once per frame
@@ -107,8 +110,26 @@ public class CustomerMovement : MonoBehaviour
         if (collision.gameObject.name == "Front")
         {
             movement.x = 0;
-            StartCoroutine(patience());
+            inFront = true;
+            Debug.Log(this + "IS AT THE FRONT OF THE LINE");
+            //StartCoroutine(patience()); // REMOVED FOR PLAYTESTING
         }
+
+        if (_desiredObject == null)
+        {
+            _desiredObject = desiredItem.toGameObject();
+            _desiredObject.transform.SetParent(gameObject.transform);
+            _desiredObject.transform.position = gameObject.transform.position;
+            _desiredObject.transform.localScale = Vector3.one;
+        }
+    }
+
+    // Tell customer to leave
+    public void dismiss()
+    {
+        Destroy(_desiredObject);
+        inFront = false;
+        movement.x = 1;
     }
 
     private void FixedUpdate()

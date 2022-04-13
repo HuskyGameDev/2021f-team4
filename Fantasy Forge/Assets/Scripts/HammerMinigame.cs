@@ -20,7 +20,7 @@ public class HammerMinigame : MonoBehaviour
     void Start()
     {
         _inputItem = GetComponentInParent<Prompt>().inputItem;
-        Debug.Log("Input to hammer is " + _inputItem.itemState + " " + _inputItem.metalType);
+        //Debug.Log("Input to hammer is " + _inputItem.itemState + " " + _inputItem.metalType);
 
         _swordShape = GetComponent<ChangeShape>();
         _hitReady = true;
@@ -67,7 +67,7 @@ public class HammerMinigame : MonoBehaviour
 
                         if (Mathf.Abs(distRemaining.magnitude) <= (targetScale - 1) / 4.0) //.1) // 
                         {
-                            Debug.Log("Vertex " + i +  " complete");
+                            //Debug.Log("Vertex " + i +  " complete");
                             _hammerComplete[i] = true;
                             _verticesComplete++;
                         }
@@ -77,12 +77,12 @@ public class HammerMinigame : MonoBehaviour
 
             if (_verticesComplete >= _swordShape.numPoints())
             {
-                Debug.Log("COMPLETE");
+                //Debug.Log("COMPLETE");
 
                 //Instantiate(_swordShape.getSpriteShape()).tag = "hammerout";
                 // Convert input item from raw to ingot
                 _inputItem.itemState = ItemState.Shape;
-                Debug.Log("Output from hammer is " + _inputItem.itemState + " " + _inputItem.metalType);
+                //Debug.Log("Output from hammer is " + _inputItem.itemState + " " + _inputItem.metalType);
 
                 GetComponentInParent<Prompt>().promptingInteractable.closePrompt();
             }

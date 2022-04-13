@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SubmitMinigame : MonoBehaviour
 {
-    public CustomerMovement waitingCustomer; // Customer whose request is to be fulfilled. First in line?
+    private CustomerMovement _waitingCustomer = null; // Customer whose request is to be fulfilled. First in line?
     
     void Start()
     {
@@ -14,17 +14,33 @@ public class SubmitMinigame : MonoBehaviour
         Debug.Log("SUBMIT MINIGAME OPENED");
 
         // Figure out which customer item is being given to. (what waitingCustomer is)
-
-        if (prompt.inputItem.Equals(waitingCustomer.desiredItem))
+        CustomerMovement[] customers = FindObjectsOfType<CustomerMovement>();
+        foreach (CustomerMovement c in customers)
         {
-            // Customer is happy
-        }
-        else
-        {
-            // Customer is unhappy
+            if (c.inFront)
+            {
+                _waitingCustomer = c;
+                break;
+            }
         }
 
-        playerInventory.removeItem(prompt.inputItem);
+        if (_waitingCustomer != null)
+        {
+            if (prompt.inputItem.Equals(_waitingCustomer.desiredItem))
+            {
+                // Customer is happy
+                Debug.Log("RIGHT ITEM");
+            }
+            else
+            {
+                // Customer is unhappy
+                Debug.Log("WRONG ITEM");
+            }
+
+            playerInventory.removeItem(prompt.inputItem);
+
+            _waitingCustomer.dismiss();
+        }
 
         promptingInteractable.closePrompt();
 

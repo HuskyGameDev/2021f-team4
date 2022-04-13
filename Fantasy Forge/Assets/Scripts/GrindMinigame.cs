@@ -38,7 +38,7 @@ public class GrindMinigame : MonoBehaviour
         _verticesComplete = 0;
 
         _inputItem = GetComponentInParent<Prompt>().inputItem;
-        Debug.Log("Input to grindstone is " + _inputItem.itemState + " " + _inputItem.metalType);
+        //Debug.Log("Input to grindstone is " + _inputItem.itemState + " " + _inputItem.metalType);
 
         /*
         if (inputObject != null)
@@ -95,7 +95,7 @@ public class GrindMinigame : MonoBehaviour
         if (_verticesComplete >= swordShape.numPoints())
         {
             _inputItem.itemState = ItemState.Blade;
-            Debug.Log("Output from grindstone is " + _inputItem.itemState + " " + _inputItem.metalType);
+            //Debug.Log("Output from grindstone is " + _inputItem.itemState + " " + _inputItem.metalType);
 
             GetComponent<Prompt>().promptingInteractable.closePrompt();
             
