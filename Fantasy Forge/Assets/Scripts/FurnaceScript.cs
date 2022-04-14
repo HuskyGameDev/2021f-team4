@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
+using System;
 
 public class FurnaceScript : MonoBehaviour
 {
@@ -23,8 +25,11 @@ public class FurnaceScript : MonoBehaviour
     public float minigameDuration;
     private bool timingFlag = false;
     private float minigameTiming;
-    private Text timerText;
-    public GameObject visualTimer;
+    public TMP_Text timerText1;
+    public TMP_Text timerText2;
+    public GameObject visualTimer1;
+    public GameObject visualTimer2;
+    public GameObject instructions;
     public GameObject hand;
     public Animator dropAnim;
 
@@ -60,8 +65,10 @@ public class FurnaceScript : MonoBehaviour
         StartCoroutine(IngotDrop(dropDuration));
 
         minigameTiming = minigameDuration;
-        timerText = visualTimer.GetComponent<Text>();
         hand.SetActive(false);
+        instructions.SetActive(false);
+        visualTimer1.SetActive(false);
+        visualTimer2.SetActive(false);
 
         _playerInventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
         Debug.Log("Input to furnace is " + _inputItem.itemState + " " + _inputItem.metalType);
@@ -74,6 +81,7 @@ public class FurnaceScript : MonoBehaviour
         {
             timer += Time.deltaTime;
             animator.SetInteger("fire", 2);
+            timerText2.text = timer.ToString("0.0");
         }
         else if(heat.value <= 1)
         {
@@ -84,11 +92,13 @@ public class FurnaceScript : MonoBehaviour
         {
             timer = 0;
             animator.SetInteger("fire", 1);
+            timerText2.text = timer.ToString("0.0");
         }
         else
         {
             timer = 0;
             animator.SetInteger("fire", 3);
+            timerText2.text = timer.ToString("0.0");
         }
 
         if(timer >= time)
@@ -105,7 +115,7 @@ public class FurnaceScript : MonoBehaviour
         if(timingFlag)
         {
             minigameTiming -= Time.deltaTime;
-            timerText.text = minigameTiming.ToString("0.0");
+            timerText1.text = minigameTiming.ToString("0.0");
         }
         if (minigameTiming <= 0)
         {
@@ -153,7 +163,9 @@ public class FurnaceScript : MonoBehaviour
 
         drop.SetActive(false);
         timingFlag = true;
-        visualTimer.SetActive(true);
+        visualTimer1.SetActive(true);
+        visualTimer2.SetActive(true);
         hand.SetActive(true);
+        instructions.SetActive(true);
     }
 }

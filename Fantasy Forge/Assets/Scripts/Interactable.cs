@@ -15,6 +15,7 @@ public class Interactable : MonoBehaviour
     private CharacterMovement _player;          // Player object for enabling/disabling movement on prompt open
     private Inventory         _playerInventory; // Inventory attached to palyer object
 
+    public GameObject buttonPrompt;
 
     // Start is called before the first frame update
     void Start()
@@ -61,8 +62,10 @@ public class Interactable : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            buttonPrompt.SetActive(true);
             _isInRange = true;
             //Debug.Log("Player now in range");
+
         }
     }
 
@@ -70,6 +73,7 @@ public class Interactable : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            buttonPrompt.SetActive(false);
             _isInRange = false;
             //Debug.Log("Player now not in range");
         }
